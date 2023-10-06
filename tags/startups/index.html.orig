@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en-us"><head>
+<<<<<<< HEAD
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
 <script>
@@ -13,6 +14,8 @@ if (!doNotTrack) {
 }
 </script>
 
+=======
+>>>>>>> main
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,14 +28,37 @@ if (!doNotTrack) {
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+<<<<<<< HEAD
+    <link rel="icon" href="images/psu_mark.png">
+=======
 
+>>>>>>> main
     
     
 
-    <title>Alejandra López Espino | about</title>
+    <title>Alejandra López Espino | startups</title>
 
+<<<<<<< HEAD
 </head>
 <body class="container d-flex flex-column min-vh-100">
+=======
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-169550091-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</head><body class="container d-flex flex-column min-vh-100">
+>>>>>>> main
 
 <div class="blog_nav_bar secondary_font ">
     
@@ -40,20 +66,64 @@ if (!doNotTrack) {
     <a class="navbar-brand" href="/">about</a>
     
     
+    
+    <a class="navbar-brand" href="/blog">« all posts</a>
+    
+    
+</div>
+
+
+<h2>Posts In <code>#startups</code> </h2>
+
+
+<p>
+    
+
+<h3>
+    <a class="title" href="/blog/blog3/">5 Best Ways To Sell ML</a>
+</h3>
+
+<div class="reading_time secondary_font text-muted ">
+    <span>
+        May 12 2020 · 4 min read
+    </span>
+
 </div>
 
 
 
 
-<h1>All Posts</h1>
+<div class="tags_navigation">
+    
+    <a class="tag" href="/tags/ml/">#ml</a>
+    
+    <a class="tag" href="/tags/ai/">#ai</a>
+    
+    <a class="tag" href="/tags/startups/">#startups</a>
+    
+</div>
+
+
+    <div>Pellentesque dapibus nec velit sit amet venenatis. Nam mauris elit, feugiat vitae massa a, scelerisque pretium justo. Aliquam eu quam suscipit, gravida dolor auctor, porttitor risus. Integer at dui blandit, scelerisque nunc vel, gravida neque. Vivamus at nisi lacinia, bibendum ipsum a, dignissim nibh. Ut urna eros, consequat ut tristique id, egestas non lectus. Cras placerat condimentum orci, et cursus tortor tempus in. Aenean sodales leo sed scelerisque molestie. Duis tempus lectus sed velit …</div>
 
 
 
+<div class="read_more">
+    <a href="/blog/blog3/">Read More…</a>
+</div>
 
+
+</p>
 
 
 
 <footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+<<<<<<< HEAD
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+=======
     <span class="text-muted">
 
 
@@ -62,6 +132,7 @@ if (!doNotTrack) {
         <a class="text-muted" href="https://github.com/hadisinaee/avicenna" target="_blank"> created by Avicenna
             (MIT)</a>
     </span>
+>>>>>>> main
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"

@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 
 <html lang="en-us"><head>
+<<<<<<< HEAD
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VC82P5VDDQ', { 'anonymize_ip': false });
+}
+</script>
+
+=======
+>>>>>>> main
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,12 +28,20 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+<<<<<<< HEAD
+    <link rel="icon" href="images/psu_mark.png">
+=======
 
+>>>>>>> main
     
     
 
     <title>Alejandra López Espino | Secrets To ML – Even In This Down Economy</title>
 
+<<<<<<< HEAD
+</head>
+<body class="container d-flex flex-column min-vh-100">
+=======
 
     
 <script type="application/javascript">
@@ -35,6 +58,7 @@ if (!doNotTrack) {
 </script>
 
 </head><body class="container d-flex flex-column min-vh-100">
+>>>>>>> main
 
 <div class="blog_nav_bar secondary_font ">
     
@@ -120,6 +144,12 @@ if (!doNotTrack) {
 
 
 <footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+<<<<<<< HEAD
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+=======
     <span class="text-muted">
 
 
@@ -128,6 +158,7 @@ if (!doNotTrack) {
         <a class="text-muted" href="https://github.com/hadisinaee/avicenna" target="_blank"> created by Avicenna
             (MIT)</a>
     </span>
+>>>>>>> main
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
