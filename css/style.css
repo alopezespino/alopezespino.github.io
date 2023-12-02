@@ -31,8 +31,8 @@ h2 code {
 }
 
 .toc {
-    margin-top: 1.5%;
-    margin-bottom: 1.5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .body {
@@ -40,11 +40,11 @@ h2 code {
 }
 
 .h-100 {
-    margin: auto;
+    margin: 0;
 }
 
 .w-100 {
-    margin: auto;
+    margin: 0;
 }
 
 .main_color  {
@@ -68,7 +68,7 @@ h2 code {
 }
 
 #profile_picture  {
-    width: 40%;
+    width: 30%;
     height: auto;
     margin-top: 1%;
 }
@@ -140,15 +140,17 @@ h2 code {
 }
 
 .publications .publication {
-    margin-top: 1.5%;
+    margin-top: 0.5%;
 }
 
 .publication .section-1 .publication-date {
     font-family: 'Ubuntu Mono', serif;
+    font-size: large;
 }
 
 .publication .section-1 .publication-name {
     font-family: 'Ubuntu Mono', serif;
+    font-size: large;
 }
 
 
@@ -156,6 +158,7 @@ h2 code {
     font-family: 'Ubuntu Mono', serif;
     margin-top: -.1%;
     margin-bottom: .5%;
+    font-size: large;
 }
 
 
@@ -163,6 +166,14 @@ h2 code {
     margin-top: -.5%;
     font-family: 'Ubuntu Mono', serif;
     text-decoration: none;
+}
+
+.publication .section-4 {
+    margin-top: -.5%;
+    /* font-family: 'Ubuntu Mono', serif; */
+    text-decoration: none;
+    color: #1e407c;
+    font-size: small;
 }
 
 .publication .section-3 a{
@@ -184,7 +195,7 @@ h2 code {
 }
 
 .projects .project {
-    margin-top: 1.5%;
+    margin-top: 1%;
 }
 
 .project .section-2 a {
@@ -201,14 +212,14 @@ h2 code {
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 
-    border-radius: 50%;
+    border-radius: 20%;
     background-color: #1e407c;
     color: white;
 }
 
 
 .section-title {
-    margin-top: 2.5%;
+    margin-top: 1%;
 }
 
 .copy_right {
