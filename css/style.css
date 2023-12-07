@@ -2,6 +2,8 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #1c2940;
+    font-size: large;
+    zoom: 130%;
 }
 
 a {
@@ -18,7 +20,7 @@ h2 code {
   /* background-color: #f1f1f1; */
   background-color:   #1E407C;
   color: white;
-  padding: 2px;
+  padding: 1px;
 }
 
 #TableOfContents ul {
@@ -31,8 +33,8 @@ h2 code {
 }
 
 .toc {
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
 }
 
 .body {
@@ -40,11 +42,11 @@ h2 code {
 }
 
 .h-100 {
-    margin: 0;
+    margin: auto;
 }
 
 .w-100 {
-    margin: 0;
+    margin: 0%;
 }
 
 .main_color  {
@@ -68,7 +70,7 @@ h2 code {
 }
 
 #profile_picture  {
-    width: 30%;
+    width: 35%;
     height: auto;
     margin-top: 1%;
 }
@@ -78,11 +80,11 @@ h2 code {
 }
 
 .about .affiliations #title {
-    padding-right: .5%;
+    padding-right: 0%;
 }
 
 .about .affiliations #name {
-    padding-right: .5%;
+    padding-right: 0%;
 }
 
 .about #email {
@@ -111,11 +113,12 @@ h2 code {
 
 .about .academia .other_info {
     font-size: small;
+    margin-bottom=0;
 }
-
+/*
 .publication .other_info .course .JEL {
     fontsize: small;
-}
+} */
 
 .course {
     margin-top: 1%;
@@ -140,7 +143,7 @@ h2 code {
 }
 
 .publications .publication {
-    margin-top: 0.5%;
+    margin-top: 1%;
 }
 
 .publication .section-1 .publication-date {
@@ -156,8 +159,8 @@ h2 code {
 
 .publication .section-2 {
     font-family: 'Ubuntu Mono', serif;
-    margin-top: -.1%;
-    margin-bottom: .5%;
+    margin-top: -1%;
+    margin-bottom: 0%;
     font-size: large;
 }
 
@@ -166,14 +169,15 @@ h2 code {
     margin-top: -.5%;
     font-family: 'Ubuntu Mono', serif;
     text-decoration: none;
+    font-size: large;
 }
 
 .publication .section-4 {
-    margin-top: -.5%;
-    /* font-family: 'Ubuntu Mono', serif; */
+    margin-top: 1%;
+    font-family: 'Inter', sans-serif;
     text-decoration: none;
     color: #1e407c;
-    font-size: small;
+    font-size: large;
 }
 
 .publication .section-3 a{
@@ -185,7 +189,7 @@ h2 code {
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #1E407C;
     color: white;
 }
@@ -195,7 +199,7 @@ h2 code {
 }
 
 .projects .project {
-    margin-top: 1%;
+    margin-top: 1.5%;
 }
 
 .project .section-2 a {
@@ -212,14 +216,14 @@ h2 code {
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 
-    border-radius: 20%;
+    border-radius: 50%;
     background-color: #1e407c;
     color: white;
 }
 
 
 .section-title {
-    margin-top: 1%;
+    margin-top: 2.5%;
 }
 
 .copy_right {
