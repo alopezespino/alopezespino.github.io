@@ -189,7 +189,7 @@ h2 code {
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 
-    border-radius: 10%;
+    border-radius: 30%;
     background-color: #1E407C;
     color: white;
 }
