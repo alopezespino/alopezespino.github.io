@@ -216,7 +216,7 @@ h2 code {
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
 
-    border-radius: 50%;
+    border-radius: 30%;
     background-color: #1e407c;
     color: white;
 }
