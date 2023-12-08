@@ -3,7 +3,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: #1c2940;
     font-size: large;
-    zoom: 130%;
+    /* zoom: 100%; */
 }
 
 a {
