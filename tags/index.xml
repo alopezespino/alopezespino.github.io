@@ -6,78 +6,140 @@
     <description>Recent content in Tags on Alejandra López Espino</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jan 2021 16:12:29 -0700</lastBuildDate><atom:link href="https://alopezespino.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2024 23:30:33 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ai</title>
-      <link>https://alopezespino.github.io/tags/ai/</link>
-      <pubDate>Mon, 11 Jan 2021 16:12:29 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/ai/</guid>
+      <title>Awk</title>
+      <link>https://alopezespino.github.io/tags/awk/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/awk/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>deep_learning</title>
-      <link>https://alopezespino.github.io/tags/deep_learning/</link>
-      <pubDate>Mon, 11 Jan 2021 16:12:29 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/deep_learning/</guid>
+      <title>Bash</title>
+      <link>https://alopezespino.github.io/tags/bash/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/bash/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>neural_networks</title>
-      <link>https://alopezespino.github.io/tags/neural_networks/</link>
-      <pubDate>Mon, 11 Jan 2021 16:12:29 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/neural_networks/</guid>
+      <title>Command-Line</title>
+      <link>https://alopezespino.github.io/tags/command-line/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/command-line/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ml</title>
-      <link>https://alopezespino.github.io/tags/ml/</link>
-      <pubDate>Tue, 12 May 2020 16:11:56 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/ml/</guid>
+      <title>Linux</title>
+      <link>https://alopezespino.github.io/tags/linux/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>startups</title>
-      <link>https://alopezespino.github.io/tags/startups/</link>
-      <pubDate>Tue, 12 May 2020 16:11:56 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/startups/</guid>
+      <title>Regex</title>
+      <link>https://alopezespino.github.io/tags/regex/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/regex/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>deep-learning</title>
-      <link>https://alopezespino.github.io/tags/deep-learning/</link>
-      <pubDate>Fri, 07 Jun 2019 16:04:19 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/deep-learning/</guid>
+      <title>Sed</title>
+      <link>https://alopezespino.github.io/tags/sed/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/sed/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>machine-learning</title>
-      <link>https://alopezespino.github.io/tags/machine-learning/</link>
-      <pubDate>Fri, 07 Jun 2019 16:04:19 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/machine-learning/</guid>
+      <title>Text-Edit</title>
+      <link>https://alopezespino.github.io/tags/text-edit/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/text-edit/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>economy</title>
-      <link>https://alopezespino.github.io/tags/economy/</link>
-      <pubDate>Fri, 18 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://alopezespino.github.io/tags/economy/</guid>
+      <title>Tutorial</title>
+      <link>https://alopezespino.github.io/tags/tutorial/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>HPC</title>
+      <link>https://alopezespino.github.io/tags/hpc/</link>
+      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/hpc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jobs</title>
+      <link>https://alopezespino.github.io/tags/jobs/</link>
+      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/jobs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MRE</title>
+      <link>https://alopezespino.github.io/tags/mre/</link>
+      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/mre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RoarCollab</title>
+      <link>https://alopezespino.github.io/tags/roarcollab/</link>
+      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/roarcollab/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cluster</title>
+      <link>https://alopezespino.github.io/tags/cluster/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/cluster/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Remote-Access</title>
+      <link>https://alopezespino.github.io/tags/remote-access/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/remote-access/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Server</title>
+      <link>https://alopezespino.github.io/tags/server/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/server/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shell</title>
+      <link>https://alopezespino.github.io/tags/shell/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSHkeys</title>
+      <link>https://alopezespino.github.io/tags/sshkeys/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/sshkeys/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unix</title>
+      <link>https://alopezespino.github.io/tags/unix/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/unix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PennState</title>
+      <link>https://alopezespino.github.io/tags/pennstate/</link>
+      <pubDate>Tue, 05 Mar 2024 12:31:06 -0500</pubDate>
+      <guid>https://alopezespino.github.io/tags/pennstate/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

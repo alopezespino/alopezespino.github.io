@@ -1,0 +1,34 @@
+/* .token.keyword.psu, .token.keyword.id, .token.keyword.psuid {
+		color: #67cdcc
+	} */
+
+/* .token.keyword.psuid {
+    color: #66d9ef;
+} */
+
+pre code mark {
+    color: #67cdcc;
+    background-color: #2d2d2d;
+    font-style: italic;
+}
+
+code mark {
+    color: #67cdcc;
+    /* background-color: #2d2d2d; */
+    background-color: #2d2d2d;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    /* font-style: italic; */
+    font-size: 1.1em;
+    /* text-align: left; */
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    tab-size: 4;
+    hyphens: none;
+    padding: .1em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    border-radius: .3em;
+    white-space: normal;
+    line-height: 1.5;
+}

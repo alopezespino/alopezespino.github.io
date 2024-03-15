@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VC82P5VDDQ', { 'anonymize_ip': false });
+}
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    
+    <script src='/js/prism.js'></script>
+    <link rel="stylesheet" href="/css/custom.css">
+
+    
+    
+
+    <title>Alejandra López Espino | Roar Collab Quickstart</title>
+
+</head>
+<body class="container d-flex flex-column min-vh-100">
+<style>
+    .outline {
+        position: fixed;
+        top: 50px;
+        left: 40px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+
+    .outline h3 {
+        margin-top: 0;
+    }
+
+    .outline ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .outline li {
+        list-style-type: none;
+        margin-bottom: 5px;  
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .outline li a {
+        text-decoration: none;  
+        color: inherit;  
+    }
+    .outline li.level-0 {
+        font-weight: '900';
+        font-size: 'larger';
+    }
+    .outline li.level-1 {
+        font-weight: 'bold';
+        text-indent: 15px;
+    }
+
+    .outline li.level-2 {
+        font-weight: 300;
+        text-indent: 30px;
+    }
+
+    .outline li.level-3 {
+        font-weight: 300;
+        text-indent: 45px;
+        color: rgb(183, 179, 179);
+    }
+
+    .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+   .active {
+      background-color: #d3d3d3;  
+   }
+</style>
+
+<aside class="outline">
+    
+
+<div class="blog_nav_bar secondary_font ">
+<img src="/favicon.ico" alt="Your image">
+    
+</div>
+    <h1>Contents</h1>
+    <div id="outline-list"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const outlineList = document.getElementById("outline-list");
+    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'));
+    headings.shift(); 
+    headings.shift();
+
+    headings.forEach((heading) => {
+        
+        if (!heading.id) {
+        heading.id = 'section-' + (index + 1);
+        }
+        const listItem = document.createElement("li");
+        const currentLevel = parseInt(heading.tagName.substring(1), 10); 
+
+        
+        listItem.classList.add(`level-${currentLevel - 1}`);
+
+        
+        listItem.innerHTML = `<a href="#${heading.id}">${heading.textContent || heading.innerText}</a>`;
+
+        
+        outlineList.appendChild(listItem);
+    });
+    
+function removeActiveClasses() {
+  const outlineListItems = outlineList.querySelectorAll('li');
+  outlineListItems.forEach(item => item.classList.remove('active'));
+}
+
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  headings.forEach((heading) => {
+    
+    if (
+      heading.offsetTop <= fromTop &&
+      heading.offsetTop + heading.offsetHeight > fromTop
+    ) {
+      
+      const listItem = outlineList.querySelector(`li a[href="#${heading.id}"]`)?.parentNode;
+      if (listItem) {
+        removeActiveClasses();
+        listItem.classList.add('active');
+      }
+    }
+  });
+});
+});
+</script>
+
+
+<div class="content-wrapper">
+    <div class="content">
+        <div class="blog_nav_bar secondary_font ">
+    
+    
+    <a class="navbar-brand" href="/">home</a>
+    
+    
+    
+    
+    <a class="navbar-brand" href="/blog">« all posts</a>
+    
+    
+</div>
+
+        
+
+<h3>
+    <a class="title" href="/blog/rcollab/">Roar Collab Quickstart</a>
+</h3>
+
+<div class="reading_time secondary_font text-muted ">
+    <span>
+        by Alejandra López Espino | Mar 5 2024 · 3 min read
+    </span>
+
+</div>
+
+
+
+
+<div class="tags_navigation">
+    
+    <a class="tag" href="/tags/PennState/">#PennState</a>
+    
+    <a class="tag" href="/tags/HPC/">#HPC</a>
+    
+    <a class="tag" href="/tags/cluster/">#cluster</a>
+    
+    <a class="tag" href="/tags/RoarCollab/">#RoarCollab</a>
+    
+    <a class="tag" href="/tags/tutorial/">#tutorial</a>
+    
+    <a class="tag" href="/tags/linux/">#linux</a>
+    
+</div>
+
+
+        <h2 id="overview">Overview</h2>
+<p>Roar Collab is Penn State&rsquo;s High-Performance Computing (HPC) Cluster. In this post, I will lay out the basic tools needed to use it.</p>
+<p>Here, I assume:</p>
+<ol>
+<li>You have already created an account and have access. Otherwise, follow the <a href="https://www.icds.psu.edu/roar-collab-user-guide/">official documentation</a> for instructions.</li>
+<li>Basic knowledge on Linux and using the comand line/bash shell. If not, check <a href="">this post</a>.</li>
+</ol>
+<p>For the remainder of this tutorial, I will refer to Roar Collab as Rcollab.</p>
+<!-- ## Two ways to use Rcollab -->
+<p>Rcollab can be used in two different modes: <em>interactive</em> and <em>batch</em>.</p>
+<h3 id="interactive-mode">Interactive mode</h3>
+<p>This mode uses the <code>open OnDemand</code> graphic user interface (GUI). This mode is meant to be used to develop codes/scripts and therfore has limited computing resources, i.e. fewer cores, limited ram per user, etc.</p>
+<p>To connect:</p>
+<ol>
+<li>Log into <a href="http://rcportal.hpc.psu.edu">http://rcportal.hpc.psu.edu</a></li>
+<li>Go to <code>Interactive Apps &gt; Roar Collab RHEL8 Interactive Desktop</code> or click on the link in the home dashboard.</li>
+</ol>
+<p><img src="/images/openOnDemand_interactive.png" alt="Portal dashboard"></p>
+<ol>
+<li>Modify the options as needed (it&rsquo;s ok to leave the default), and click <code>Launch</code>.
+<img src="/images/InteractiveDesktop_options.png" alt="Interactive desktop options"></li>
+<li>You will see a green banner stating &ldquo;Session successfully created&rdquo;. Wait for a few minutes and access your interactive session once it starts running. Click on &ldquo;LaunchRoar Collab RHEL8 Interactive Desktop&rdquo;.
+<img src="/images/launchDesktop.png" alt="Launch interactive desktop"></li>
+</ol>
+<h3 id="batch-mode">Batch mode</h3>
+<p>This mode doesn&rsquo;t have a GUI, and is controlled via the command line. Computing jobs are submitted through this mode.</p>
+<p>Once you have written and tested your code, you can submit it to the server via the <em>batch</em> interface. There are two ways to access Rcollab in batch mode.</p>
+<h4 id="portal">Portal</h4>
+<ol>
+<li>Log into <a href="http://rcportal.hpc.psu.edu">http://rcportal.hpc.psu.edu</a></li>
+<li>Go to <code>Clusters &gt; _RC Shell Access</code> or click on the link in the home dashboard.
+<img src="/images/openOnDeman_batch.png" alt="RC Shell Access"></li>
+</ol>
+<h4 id="shell">Shell</h4>
+<ol>
+<li>In a command line run</li>
+</ol>
+<pre tabindex="0"><code>ssh &lt;psuid&gt;@submit.hpc.psu.edu
+</code></pre><p>where you substitute <code>&lt;psuid&gt;</code> for your id. When prompted, input your password and follow the 2-factor authentication steps.</p>
+<p>Using a shell to connect to Rcollab is often the fastest way.</p>
+<p>Note: On a PSU computer, you can use a portable shell, like <a href="https://mobaxterm.mobatek.net/download-home-edition.html">MobaXterm</a>.</p>
+<h2 id="file-transfer">File Transfer</h2>
+<p>For transferring files to/from collab to the local machine, type the following in your local machine&rsquo;s terminal</p>
+<h4 id="from-pc-to-rcollab">from PC to Rcollab</h4>
+<pre tabindex="0"><code>scp -r &lt;pathto/localfile&gt; &lt;YOUR-PSU-ID&gt;@submit.Rcollab.ics.psu.edu:&lt;/destination/path/&gt;
+</code></pre><h4 id="from-rcollab-to-pc">from Rcollab to PC</h4>
+<pre tabindex="0"><code>scp -r &lt;YOUR-PSU-ID&gt;@submit.Rcollab.ics.psu.edu:&lt;pathto/acifile&gt; &lt;/localdestination/path/&gt;
+</code></pre><h2 id="software-modules">Software (Modules)</h2>
+<p>Rcollab has a wide variety of modules (software and libraries) already installed. Some software like Matlab, RStudio and Jupyter are available as interactive desktops, but in the majority of cases, if you want to use the software, you need to launch it from the shell. Below I show how to load Stata</p>
+<h4 id="load-example-stata">Load Example: Stata</h4>
+<pre tabindex="0"><code></code></pre><p>To search for a module use</p>
+<pre tabindex="0"><code>module spider &lt;module-name&gt;
+</code></pre><p>Now suppose you want to load Stata, first, you import a specific set of modules by running</p>
+<pre tabindex="0"><code>module use /gpfs/group/dml129/default/sw/modules
+</code></pre><p>then</p>
+<pre tabindex="0"><code>module load stata/14.2
+xstata-se
+</code></pre><p>The first line loads the module and the second launches Stata&rsquo;s GUI. The <code>se</code> part is for the SE version which can handle large datasets. there is also the <code>IC</code> (standard) version or the <code>MP</code> multi-processor version.
+For loading Stata in the command line simply do</p>
+<pre tabindex="0"><code>stata-se
+</code></pre><p><strong>Note:</strong> In order to use the GUI you must log in via Exceed on Demand.</p>
+<h1 id="check-if-a-library-is-installed">Check if a library is installed</h1>
+<pre tabindex="0"><code>ldconfig -p | grep &lt;TheLibraryYouLookFor&gt;
+</code></pre><h1 id="rstudio-on-rcollab-i">RStudio on Rcollab-i</h1>
+<p>go to <a href="http://rstudio.Rcollab.ics.psu.edu">http://rstudio.Rcollab.ics.psu.edu</a> and log in.</p>
+<h1 id="unrar-files">UnRAR files</h1>
+<ol>
+<li>In the terminal:</li>
+</ol>
+<pre tabindex="0"><code>cd /gpfs/scratch/axl5463
+wget https://www.rarlab.com/rar/rarlinux-x64-6.0.2.tar.gz
+tar xf rarlinux-x64-6.0.2.tar.gz
+</code></pre><ol start="2">
+<li>Go to your work folder where the .rar files are and do:</li>
+</ol>
+<pre tabindex="0"><code>/gpfs/scratch/axl5463/rar/unrar e FILENAME PATH/TO/EXTRACT
+</code></pre><p>if the <code>rar</code> file is password-protected</p>
+<pre tabindex="0"><code>/gpfs/scratch/axl5463/rar/unrar e -p FILENAME PATH/TO/EXTRACT
+</code></pre>
+    </div>
+</div>
+
+<style>
+    .content-wrapper {
+        max-width: 700px;  
+        margin: 0 auto;  
+    }
+
+    .content {
+        width: 100%;  
+    }
+
+     
+    .content .blog_navbar {
+        position: fixed;
+        top: 50px;
+        left: 40px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+</style>
+<footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+<script>
+    feather.replace()
+</script></body>
+
+</html>

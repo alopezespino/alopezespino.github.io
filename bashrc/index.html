@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VC82P5VDDQ', { 'anonymize_ip': false });
+}
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    
+    <script src='/js/prism.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    
+    
+
+    <title>Alejandra López Espino | Enhance Your Command Line Experience: Mastering the `.bashrc` File</title>
+
+</head>
+<body class="container d-flex flex-column min-vh-100">
+<div class="flex-container">
+  <style>
+    .outline {
+        position: sticky;
+        top: 0;
+        left: 0px;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-left: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    @media (max-width: 700px) {
+        .outline {
+            display: none;
+        }
+    }
+
+    .outline h3 {
+        margin-top: 0;
+    }
+
+    .outline ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .outline li {
+        list-style-type: none;
+        margin-bottom: 5px;  
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .outline li a {
+        text-decoration: none;  
+        color: inherit;  
+    }
+    .outline li.level-0 {
+        font-weight: '900';
+        font-size: 'x-large';
+    }
+    .outline li.level-1 {
+        font-weight: 600;
+        text-indent: 0px;
+        text-align: left;
+    }
+
+    .outline li.level-2 {
+        font-weight: 400;
+        text-indent: 0px;
+        margin-left: 20px;
+    }
+
+    .outline li.level-3 {
+        font-weight: 200;
+        text-indent: 0px;
+        margin-left: 40px;
+        color: rgb(116, 114, 114);
+    }
+
+    .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+   .active {
+      background-color: #d3d3d3;  
+   }
+
+  
+    .outline .blog_navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+    aside {
+        position:sticky;
+        max-height: fit-content;
+    }
+</style>
+
+<aside class="outline">
+<div class="row w-100 justify-content-center">
+    <img class="rounded-circle" src="/images/profile.png" alt="profile_picture" id="profile_picture2"
+    style = "padding-top: 10px;" />
+    <h3
+    style="padding-top: 30px;
+    margin:0;
+    padding-bottom:0;
+    length:20px;
+    font-weight: 500;
+    text-align: left">Contents</h3>
+<hr style="margin-top: 2px;" />
+    <div id="outline-list"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const outlineList = document.getElementById("outline-list");
+    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'));
+    headings.shift(); 
+    
+
+    headings.forEach((heading, index) => {
+        
+        
+        
+       
+        const listItem = document.createElement("li");
+
+        
+        
+        if (index === 0) {
+            listItem.classList.add(`level-1`);
+        } else {
+            let currentLevel = parseInt(heading.tagName.substring(1), 10); 
+            listItem.classList.add(`level-${currentLevel}`);
+        }
+
+        
+        listItem.innerHTML = `<a href="#${heading.id}">${heading.textContent || heading.innerText}</a>`;
+
+        
+        outlineList.appendChild(listItem);
+    });
+    
+function removeActiveClasses() {
+  const outlineListItems = outlineList.querySelectorAll('li');
+  outlineListItems.forEach(item => item.classList.remove('active'));
+}
+
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  headings.forEach((heading) => {
+    
+    if (
+      heading.offsetTop <= fromTop &&
+      heading.offsetTop + heading.offsetHeight > fromTop
+    ) {
+      
+      const listItem = outlineList.querySelector(`li a[href="#${heading.id}"]`)?.parentNode;
+      if (listItem) {
+        removeActiveClasses();
+        listItem.classList.add('active');
+      }
+    }
+  });
+});
+});
+</script>
+
+
+  <section>
+    <div class="content">
+      <div class="navbar-sticky">
+        <div class="blog_nav_bar">
+    <img src="/favicon.ico" alt="" height="25px">
+    
+    
+    <a class="navbar-brand" href="/">&nbsp;&nbsp;Home</a>
+    
+    
+    
+    
+    <a class="navbar-brand" href="/blog">Posts</a>
+    
+    
+</div>
+ 
+
+<h3 style="font-size: 24px; font-weight:400">
+    <a class="title" href="/bashrc/">Enhance Your Command Line Experience: Mastering the `.bashrc` File</a>
+</h3>
+
+<div class="reading_time secondary_font text-muted ">
+    <span>
+        by Alejandra López Espino | Mar 9 2024 · 2 min read
+    </span>
+
+</div>
+
+
+
+
+
+<hr style="margin-top: 10px; margin-bottom:10px" />
+
+      </div>
+      <h1 id="what-is-bashrc">What is <code>.bashrc</code>?</h1>
+<p>The <code>.bashrc</code> file is a script file that is executed every time a new interactive non-login shell is launched in the Bash shell environment. It is commonly used to set up environment variables, define custom aliases, and configure other shell-related settings.</p>
+<h2 id="making-changes-to-bashrc">Making changes to <code>.bashrc</code></h2>
+<p>To modify the .bashrc file using the vim text editor, follow these steps:</p>
+<ol>
+<li>
+<p>Open a terminal or shell.</p>
+</li>
+<li>
+<p>Run the following command to open the .bashrc file in vim:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>vim ~/.bashrc
+</code></pre><ol start="2">
+<li>Once the file is open in vim, use the arrow keys to navigate to the desired location where you want to make changes.</li>
+</ol>
+<p>Press the <code>i</code> key on your keyboard to enter the <em>insert mode</em> in <code>vim</code>. Now you can make changes to the file.</p>
+<ol start="3">
+<li>
+<p>After making the necessary modifications, press the Esc key to exit the <em>insert mode</em>.</p>
+</li>
+<li>
+<p>To save the changes and exit vim, type <code>:wq</code> (write and quit) and press <code>Enter</code>.</p>
+</li>
+</ol>
+<p>Note: If you&rsquo;re not familiar with vim, you can check out Check out <a href="http://localhost:1313/vim/">this post</a> or <a href="https://www.openvim.com">this tutorial</a></p>
+<h1 id="handy-aliases-and-functions-to-boost-your-productivity">Handy Aliases and Functions to Boost your Productivity</h1>
+<h1 id="aliases-to-make-our-coding-life-easier-">Aliases to make our coding life easier :)</h1>
+<h2 id="10-handy-bash-aliases">10 handy Bash aliases</h2>
+<ol>
+<li>How many times have you needed to unpack a .tar file and couldn&rsquo;t remember the exact arguments needed? Aliases to the rescue! Just add the following to your .bash_profile file and then use untar FileName to unpack any .tar file.</li>
+</ol>
+<pre tabindex="0"><code>alias untar=&#39;tar -zxvf &#39;
+</code></pre><ol start="2">
+<li>Want to download something but be able to resume if something goes wrong?</li>
+</ol>
+<pre tabindex="0"><code>alias wget=&#39;wget -c &#39;
+</code></pre><ol start="3">
+<li>Need to generate a random, 20-character password for a new online account? No problem.</li>
+</ol>
+<pre tabindex="0"><code>alias getpass=&#34;openssl rand -base64 20&#34;
+</code></pre><ol start="4">
+<li>Downloaded a file and need to test the checksum? We&rsquo;ve got that covered too.</li>
+</ol>
+<pre tabindex="0"><code>alias sha=&#39;shasum -a 256 &#39;
+</code></pre><ol start="5">
+<li>A normal ping will go on forever. We don&rsquo;t want that. Instead, let&rsquo;s limit that to just five pings.</li>
+</ol>
+<pre tabindex="0"><code>alias ping=&#39;ping -c 5&#39;
+</code></pre><ol start="6">
+<li>Start a web server in any folder you&rsquo;d like.</li>
+</ol>
+<pre tabindex="0"><code>alias www=&#39;python -m SimpleHTTPServer 8000&#39;
+</code></pre><ol start="7">
+<li>Want to know how fast your network is? Just download Speedtest-cli and use this alias. You can choose a server closer to your location by using the speedtest-cli &ndash;list command.</li>
+</ol>
+<pre tabindex="0"><code>alias speed=&#39;speedtest-cli --server 2406 --simple&#39;
+</code></pre><ol start="8">
+<li>How many times have you needed to know your external IP address and had no idea how to get that info? Yeah, me too.</li>
+</ol>
+<pre tabindex="0"><code>alias ipe=&#39;curl ipinfo.io/ip&#39;
+</code></pre><ol start="9">
+<li>Need to know your local IP address?</li>
+</ol>
+<pre tabindex="0"><code>alias ipi=&#39;ipconfig getifaddr en0&#39;
+</code></pre><ol start="10">
+<li>Finally, let&rsquo;s clear the screen.</li>
+</ol>
+<pre tabindex="0"><code>alias c=&#39;clear&#39;
+</code></pre><p>sources: <a href="https://opensource.com/article/18/9/handy-bash-aliases">https://opensource.com/article/18/9/handy-bash-aliases</a></p>
+
+    </div>
+  </section>
+</div>
+
+<style>
+
+  .flex-container {
+    display: flex;
+  }
+  .flex-container section {
+    flex: 1; 
+  }
+  .content {
+    width: 800px;  
+    top: 0;
+    vertical-align: top;
+    margin-left: 30px;
+  }
+  .navbar-sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;  
+    z-index: 99;  
+  }
+
+  :target:before {
+     
+    content: "";
+    display: block;
+    height: 270px;  
+    margin: -270px 0 0;  
+  }
+   
+  .content .blog_navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+</style>
+<footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+<script>
+    feather.replace()
+</script></body>
+
+</html>

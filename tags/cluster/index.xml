@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cluster on Alejandra López Espino</title>
+    <link>https://alopezespino.github.io/tags/cluster/</link>
+    <description>Recent content in Cluster on Alejandra López Espino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Mar 2024 16:10:30 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/tags/cluster/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Secure Remote Access: A Guide to SSH Keys for Servers and HPC Clusters</title>
+      <link>https://alopezespino.github.io/sshconfig/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/sshconfig/</guid>
+      <description>What are SSH keys SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&#xA;Benefits Leveraging SSH authentication can significantly enhance your research workflow with High Performance Computing (HPC) resources. It allows for seamless file exchanges between your local computer and the server directly from the terminal, eliminating the need to repeatedly input your account password. Moreover, SSH authentication enables you to work on your code locally while executing it remotely using, for instance, VS Code.</description>
+    </item>
+    <item>
+      <title>Roar Collab Quickstart</title>
+      <link>https://alopezespino.github.io/rcollab/</link>
+      <pubDate>Tue, 05 Mar 2024 12:31:06 -0500</pubDate>
+      <guid>https://alopezespino.github.io/rcollab/</guid>
+      <description>Overview Roar Collab is Penn State&amp;rsquo;s High-Performance Computing (HPC) Cluster. In this post, I will lay out the basic tools needed to use it.&#xA;Here, I assume:&#xA;You have already created an account and have access. Otherwise, follow the official documentation for instructions. Basic knowledge on Linux and using the comand line/bash shell. If not, check &amp;ldquo;Command Line Basics&amp;rdquo;. For the remainder of this tutorial, I will refer to Roar Collab as Rcollab.</description>
+    </item>
+  </channel>
+</rss>

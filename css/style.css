@@ -3,7 +3,12 @@ body {
     font-family: 'Inter', sans-serif;
     color: #1c2940;
     font-size: large;
+    vertical-align: top;
+    /* min-width: 500px; */
     /* zoom: 100%; */
+    text-align: justify;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 a {
@@ -38,7 +43,7 @@ h2 code {
 }
 
 .body {
-    margin: auto;
+    margin: 0%;
 }
 
 .h-100 {
@@ -75,8 +80,14 @@ h2 code {
     margin-top: 1%;
 }
 
+#profile_picture2  {
+    width: 90%;
+    height: auto;
+    margin-top: 1%;
+}
+
 .about #full_name {
-    font-size: xxx-large;
+    font-size:220%;
 }
 
 .about .affiliations #title {
@@ -221,6 +232,15 @@ h2 code {
     color: white;
 }
 
+/* Assuming the title is inside an element with the class "post-title" */
+.title {
+    font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+.post-title {
+    font-size: 2em; /* Adjust the font size as needed */
+}
+
 
 .section-title {
     margin-top: 2.5%;
@@ -268,8 +288,8 @@ h2 code {
 }
 
 .blog_nav_bar {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 
 .blog_nav_bar .item {
@@ -281,6 +301,21 @@ h2 code {
     padding-right: .5%;
 }
 
+.link-with-icon {
+  display: inline-flex; /* Use flexbox to align icon and text */
+  align-items: center;  /* Center-aligns the icon and text vertically */
+  text-decoration: none; /* Removes the underline from the link */
+  color: inherit; /* Inherits the text color from the parent element */
+  font-weight: normal; /* Optional: makes the link text bold */
+  font-size:20px;
+}
+
+.link-with-icon img {
+  margin-right: 10px; /* Adds spacing between the icon and the text */
+  width: 48px; /* Sets the width of the icon */
+  height: 48px; /* Sets the height of the icon */
+}
+
 .reading_time {
     font-family: 'Ubuntu Mono', serif;
     margin-top: -.5%;
@@ -289,4 +324,17 @@ h2 code {
 
 .read_more {
     margin-top: 1%;
+}
+
+/* .container {
+    /*margin-left: 100px;  /* Change '10px' to desired value */
+    /*margin-right: 100px;  /* Change '10px' to desired value */
+    /* flex-shrink: 2; } */
+
+@media (max-width: 720px) {
+    .container section {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0%;
+    }
 }

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="en-us"><head>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VC82P5VDDQ', { 'anonymize_ip': false });
+}
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    
+    <script src='/js/prism.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    
+    
+
+    <title>Alejandra López Espino | Submitting your First Job to Roar Collab</title>
+
+</head>
+<body class="container d-flex flex-column min-vh-100">
+<div class="flex-container">
+  <style>
+    .outline {
+        position: sticky;
+        top: 0;
+        left: 0px;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-left: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    @media (max-width: 700px) {
+        .outline {
+            display: none;
+        }
+    }
+
+    .outline h3 {
+        margin-top: 0;
+    }
+
+    .outline ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .outline li {
+        list-style-type: none;
+        margin-bottom: 5px;  
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .outline li a {
+        text-decoration: none;  
+        color: inherit;  
+    }
+    .outline li.level-0 {
+        font-weight: '900';
+        font-size: 'x-large';
+    }
+    .outline li.level-1 {
+        font-weight: 600;
+        text-indent: 0px;
+        text-align: left;
+    }
+
+    .outline li.level-2 {
+        font-weight: 400;
+        text-indent: 0px;
+        margin-left: 20px;
+    }
+
+    .outline li.level-3 {
+        font-weight: 200;
+        text-indent: 0px;
+        margin-left: 40px;
+        color: rgb(116, 114, 114);
+    }
+
+    .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+   .active {
+      background-color: #d3d3d3;  
+   }
+
+  
+    .outline .blog_navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+    aside {
+        position:sticky;
+        max-height: fit-content;
+    }
+</style>
+
+<aside class="outline">
+<div class="row w-100 justify-content-center">
+    <img class="rounded-circle" src="/images/profile.png" alt="profile_picture" id="profile_picture2"
+    style = "padding-top: 10px;" />
+    <h3
+    style="padding-top: 30px;
+    margin:0;
+    padding-bottom:0;
+    length:20px;
+    font-weight: 500;
+    text-align: left">Contents</h3>
+<hr style="margin-top: 2px;" />
+    <div id="outline-list"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const outlineList = document.getElementById("outline-list");
+    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'));
+    headings.shift(); 
+    
+
+    headings.forEach((heading, index) => {
+        
+        
+        
+       
+        const listItem = document.createElement("li");
+
+        
+        
+        if (index === 0) {
+            listItem.classList.add(`level-1`);
+        } else {
+            let currentLevel = parseInt(heading.tagName.substring(1), 10); 
+            listItem.classList.add(`level-${currentLevel}`);
+        }
+
+        
+        listItem.innerHTML = `<a href="#${heading.id}">${heading.textContent || heading.innerText}</a>`;
+
+        
+        outlineList.appendChild(listItem);
+    });
+    
+function removeActiveClasses() {
+  const outlineListItems = outlineList.querySelectorAll('li');
+  outlineListItems.forEach(item => item.classList.remove('active'));
+}
+
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  headings.forEach((heading) => {
+    
+    if (
+      heading.offsetTop <= fromTop &&
+      heading.offsetTop + heading.offsetHeight > fromTop
+    ) {
+      
+      const listItem = outlineList.querySelector(`li a[href="#${heading.id}"]`)?.parentNode;
+      if (listItem) {
+        removeActiveClasses();
+        listItem.classList.add('active');
+      }
+    }
+  });
+});
+});
+</script>
+
+
+  <section>
+    <div class="content">
+      <div class="navbar-sticky">
+        <div class="blog_nav_bar">
+    <img src="/favicon.ico" alt="" height="25px">
+    
+    
+    <a class="navbar-brand" href="/">&nbsp;&nbsp;Home</a>
+    
+    
+    
+    
+    <a class="navbar-brand" href="/blog">Posts</a>
+    
+    
+</div>
+ 
+
+<h3 style="font-size: 24px; font-weight:400">
+    <a class="title" href="/jobs/">Submitting your First Job to Roar Collab</a>
+</h3>
+
+<div class="reading_time secondary_font text-muted ">
+    <span>
+        by Alejandra López Espino | Mar 9 2024 · 4 min read
+    </span>
+
+</div>
+
+
+
+
+<div class="tags_navigation">
+    
+    <a class="tag" href="/tags/RoarCollab/">#RoarCollab</a>
+    
+    <a class="tag" href="/tags/jobs/">#jobs</a>
+    
+    <a class="tag" href="/tags/MRE/">#MRE</a>
+    
+    <a class="tag" href="/tags/bash/">#bash</a>
+    
+    <a class="tag" href="/tags/Linux/">#Linux</a>
+    
+    <a class="tag" href="/tags/HPC/">#HPC</a>
+    
+    <a class="tag" href="/tags/tutorial/">#tutorial</a>
+    
+</div>
+
+
+<hr style="margin-top: 10px; margin-bottom:10px" />
+
+      </div>
+      <p>You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.</p>
+<h2 id="step-1-create-a-job-submit-script">Step 1: Create a job submit script.</h2>
+<p>Below is an example of such file, called <code>job_submit.sh</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#SBATCH --nodes=1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SBATCH --cpus-per-task=4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SBATCH --time=1:00:00</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SBATCH --mem=1GB</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SBATCH --job-name=job_test</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SBATCH --output=output_%j.log</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SBATCH --mail-user=&lt;psu-id&gt;@psu.edu</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#SBATCH --mail-type=BEGIN,END,FAIL</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># User specific aliases and functions</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## modules</span>
+</span></span><span style="display:flex;"><span>module load r/4.3.2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># by default, the job starts in your home directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># change it to where you put your .sh file, usually</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># next to code to use</span>
+</span></span><span style="display:flex;"><span>cd $HOME/work/code/job_example/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Body of code (include here scripts to run)</span>
+</span></span><span style="display:flex;"><span>R --file<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./script.R&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Finish up</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34; &#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Job Ended at `date`&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34; &#34;</span>
+</span></span></code></pre></div><h3 id="configuration-parameters">Configuration Parameters</h3>
+<ul>
+<li>
+<p><code>#SBATCH --nodes=1</code>: Specifies the number of compute nodes required for the job. In this case, it is set to 1.</p>
+</li>
+<li>
+<p><code>#SBATCH --cpus-per-task=4</code>: Specifies the number of CPUs allocated per task. In this case, it is set to 4.</p>
+</li>
+<li>
+<p><code>#SBATCH --time=1:00:00</code>: Specifies the maximum runtime for the job. In this case, it is set to 1 hour.</p>
+</li>
+<li>
+<p><code>#SBATCH --mem=1GB</code>: Specifies the amount of memory allocated per node for the job. In this case, it is set to 1GB.</p>
+</li>
+<li>
+<p><code>#SBATCH --job-name=job_name</code>: Specifies the name of the job. Replace <code>job_test</code> with the desired name.</p>
+</li>
+<li>
+<p><code>#SBATCH --output=output_%j.log</code>: Specifies the output file for the job. It uses %j as a placeholder for the job ID.</p>
+</li>
+<li>
+<p><code>#SBATCH --mail-user=&lt;psu-id&gt;@psu.edu</code>: Specifies the email address to receive notifications about the job. Replace <code>&lt;psu-id&gt;</code> with your own username.</p>
+</li>
+<li>
+<p><code>#SBATCH --mail-type=BEGIN,END,FAIL</code>: Specifies the types of email notifications to receive. In this case, it is set to receive notifications at the beginning, end, and in case of failure.</p>
+</li>
+</ul>
+<p>The <code>module load</code> line is necessary to load R into the Roar Collab session. I recommend always specifying a software version to ensure you are always using the same one. In this case, we are using R version <code>4.3.2</code>. Use <code>module spider &quot;r&quot;</code> to get a list of all available versions.</p>
+<h3 id="r-script-example">R script example</h3>
+<p>Below is the R script called <code>script.R</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#75715e"># Example R script (script.R) using the mtcars dataset</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load necessary libraries</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(dplyr)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">library</span>(ggplot2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use the mtcars dataset</span>
+</span></span><span style="display:flex;"><span>data <span style="color:#f92672">&lt;-</span> mtcars
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example analysis using dplyr across</span>
+</span></span><span style="display:flex;"><span>data_summary <span style="color:#f92672">&lt;-</span> data <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">summarise</span>(<span style="color:#a6e22e">across</span>(<span style="color:#a6e22e">where</span>(is.numeric),
+</span></span><span style="display:flex;"><span>                   <span style="color:#a6e22e">list</span>(mean <span style="color:#f92672">=</span> mean, sd <span style="color:#f92672">=</span> sd, min <span style="color:#f92672">=</span> min,
+</span></span><span style="display:flex;"><span>                        Q1 <span style="color:#f92672">=</span> <span style="color:#f92672">~</span><span style="color:#a6e22e">quantile</span>(.x, <span style="color:#ae81ff">0.25</span>),
+</span></span><span style="display:flex;"><span>                        median <span style="color:#f92672">=</span> median,
+</span></span><span style="display:flex;"><span>                        Q3 <span style="color:#f92672">=</span> <span style="color:#f92672">~</span><span style="color:#a6e22e">quantile</span>(.x, <span style="color:#ae81ff">0.75</span>),
+</span></span><span style="display:flex;"><span>                        max <span style="color:#f92672">=</span> max),
+</span></span><span style="display:flex;"><span>                   .names <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;{col}_{fn}&#34;</span>)) <span style="color:#f92672">%&gt;%</span>
+</span></span><span style="display:flex;"><span>  tidyr<span style="color:#f92672">::</span><span style="color:#a6e22e">pivot_longer</span>(cols <span style="color:#f92672">=</span> <span style="color:#a6e22e">everything</span>(),
+</span></span><span style="display:flex;"><span>                      names_to <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;variable&#34;</span>,<span style="color:#e6db74">&#34;.value&#34;</span>),
+</span></span><span style="display:flex;"><span>                      names_sep <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;_&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Plot example: Create a histogram for the mpg variable</span>
+</span></span><span style="display:flex;"><span>plot <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">ggplot</span>(data, <span style="color:#a6e22e">aes</span>(x <span style="color:#f92672">=</span> mpg)) <span style="color:#f92672">+</span> <span style="color:#a6e22e">geom_histogram</span>(binwidth <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;skyblue&#34;</span>, color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;black&#34;</span>) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">labs</span>(title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Histogram of MPG in mtcars&#34;</span>, x <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Miles Per Gallon&#34;</span>, y <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Frequency&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save the output</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">write.csv</span>(data_summary, <span style="color:#e6db74">&#34;summary_output.csv&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ggsave</span>(<span style="color:#e6db74">&#34;histogram_output.png&#34;</span>, plot)
+</span></span></code></pre></div><h2 id="step-2-submit-your-job">Step 2: Submit your job</h2>
+<p>In your Roar Collab session, go to folder containing the <code>.slurm</code> file you just created, then type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sbatch job_submit.sh
+</span></span></code></pre></div><hr>
+<h1 id="monitoring-and-managing-your-job">Monitoring and managing your job</h1>
+<h2 id="checking-the-status-of-your-job">Checking the status of your job</h2>
+<p>To see the status of submitted job type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>squeue
+</span></span></code></pre></div><p>To list all the jobs belonging to a particular user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>squeue -u &lt;psu-id&gt;
+</span></span></code></pre></div><p>To get all the details about a particular job (full status):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scontrol show jobid -dd
+</span></span></code></pre></div><h3 id="automated-monitoring">Automated monitoring</h3>
+<p>If you want to keep a terminal window open and checking your jobs&rsquo; status every <code>x</code> seconds, simply run</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>watch --interval<span style="color:#f92672">=</span>x squeue -u &lt;psu-id&gt;
+</span></span></code></pre></div><p>to exit the monitoring screen and go back to the usual prompt, simply do <code>CTRL+c</code>.</p>
+<h2 id="modifying-jobs-on-the-queue">Modifying jobs on the queue</h2>
+<p>It is possible to alter the requested resources of a job without losing your place in the queue. For example, say you want to change the walltime to 12 hrs, then type</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scontrol update jobid<span style="color:#f92672">=</span>JOB_ID TimeLimit<span style="color:#f92672">=</span>DD-HH:MM:SS
+</span></span></code></pre></div><p>Remember, you can only modify jobs that are in the queue and have not yet started running.</p>
+<h2 id="cancelling-jobs">Cancelling jobs</h2>
+<p>To cancel a job, type <code>scancel JOB_ID</code>. You can find the JOB_ID using <code>squeue</code>.</p>
+<p>Sources:</p>
+<ul>
+<li><a href="https://slurm.schedmd.com/pdfs/summary.pdf">SLURM Commands Quick Reference</a></li>
+<li><a href="https://ics.psu.edu/computing-services/roar-user-guide/">PSU&rsquo;s Roar User Guide</a></li>
+</ul>
+<h2 id="for-serially-running-jobs-you-can-use-job-dependencies">For serially running jobs, you can use job dependencies:</h2>
+<ol>
+<li>Submit the first job</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>JOB_ID_1<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>sbatch job1.sh | awk <span style="color:#e6db74">&#39;{print $4}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><ol start="2">
+<li>Submit the second job to start after the first job completes successfully</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>JOB_ID_2<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>sbatch --dependency<span style="color:#f92672">=</span>afterok:$JOB_ID_1 job2.sh | awk <span style="color:#e6db74">&#39;{print $4}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><ol start="3">
+<li>Repeat as necessary. Or, create an array of slurm jobs and run them all together:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sbatch --array<span style="color:#f92672">=</span>1-100 job_array.sh
+</span></span></code></pre></div><p>Here is a bash code you can use to submit a chain of jobs:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>// File name : run_100jobs_for_me.sh
+</span></span><span style="display:flex;"><span>// the first job you submit
+</span></span><span style="display:flex;"><span>job<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>sbatch myrun1.sh | awk <span style="color:#e6db74">&#39;{print $4}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// submission of the jobs <span style="color:#ae81ff">2</span> through 100!
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>2..100<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    job_next<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>sbatch --dependency<span style="color:#f92672">=</span>afterok:$job myrun$i.sh | awk <span style="color:#e6db74">&#39;{print $4}&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    job<span style="color:#f92672">=</span>$job_next
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>You can run the code above using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sh run_100jobs_for_me.sh
+</span></span></code></pre></div><h4 id="customizing-running-order-with-conditional-afteranys">Customizing running order with conditional <code>afterany</code>s</h4>
+<ul>
+<li>Job is scheduled if the Job JOB_ID exits without errors or is successfully completed.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afterok:JOB_ID
+</span></span></code></pre></div><ul>
+<li>Job is scheduled if the Job JOB_ID exited with errors.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afternotok:JOB_ID
+</span></span></code></pre></div><ul>
+<li>Job is scheduled if the Job JOB_ID exits with or without error</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> afterany:JOB_ID
+</span></span></code></pre></div>
+    </div>
+  </section>
+</div>
+
+<style>
+
+  .flex-container {
+    display: flex;
+  }
+  .flex-container section {
+    flex: 1; 
+  }
+  .content {
+    width: 800px;  
+    top: 0;
+    vertical-align: top;
+    margin-left: 30px;
+  }
+  .navbar-sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;  
+    z-index: 99;  
+  }
+
+  :target:before {
+     
+    content: "";
+    display: block;
+    height: 270px;  
+    margin: -270px 0 0;  
+  }
+   
+  .content .blog_navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+</style>
+<footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+<script>
+    feather.replace()
+</script></body>
+
+</html>

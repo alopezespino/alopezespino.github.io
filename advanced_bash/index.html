@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VC82P5VDDQ', { 'anonymize_ip': false });
+}
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    
+    <script src='/js/prism.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    
+    
+
+    <title>Alejandra López Espino | Command Line Basics</title>
+
+</head>
+<body class="container d-flex flex-column min-vh-100">
+<div class="flex-container">
+  <style>
+    .outline {
+        position: sticky;
+        top: 0;
+        left: 0px;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-left: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    @media (max-width: 700px) {
+        .outline {
+            display: none;
+        }
+    }
+
+    .outline h3 {
+        margin-top: 0;
+    }
+
+    .outline ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .outline li {
+        list-style-type: none;
+        margin-bottom: 5px;  
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .outline li a {
+        text-decoration: none;  
+        color: inherit;  
+    }
+    .outline li.level-0 {
+        font-weight: '900';
+        font-size: 'x-large';
+    }
+    .outline li.level-1 {
+        font-weight: 600;
+        text-indent: 0px;
+        text-align: left;
+    }
+
+    .outline li.level-2 {
+        font-weight: 400;
+        text-indent: 0px;
+        margin-left: 20px;
+    }
+
+    .outline li.level-3 {
+        font-weight: 200;
+        text-indent: 0px;
+        margin-left: 40px;
+        color: rgb(116, 114, 114);
+    }
+
+    .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+   .active {
+      background-color: #d3d3d3;  
+   }
+
+  
+    .outline .blog_navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+    aside {
+        position:sticky;
+        max-height: fit-content;
+    }
+</style>
+
+<aside class="outline">
+<div class="row w-100 justify-content-center">
+    <img class="rounded-circle" src="/images/profile.png" alt="profile_picture" id="profile_picture2"
+    style = "padding-top: 10px;" />
+    <h3
+    style="padding-top: 30px;
+    margin:0;
+    padding-bottom:0;
+    length:20px;
+    font-weight: 500;
+    text-align: left">Contents</h3>
+<hr style="margin-top: 2px;" />
+    <div id="outline-list"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const outlineList = document.getElementById("outline-list");
+    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'));
+    headings.shift(); 
+    
+
+    headings.forEach((heading, index) => {
+        
+        
+        
+       
+        const listItem = document.createElement("li");
+
+        
+        
+        if (index === 0) {
+            listItem.classList.add(`level-1`);
+        } else {
+            let currentLevel = parseInt(heading.tagName.substring(1), 10); 
+            listItem.classList.add(`level-${currentLevel}`);
+        }
+
+        
+        listItem.innerHTML = `<a href="#${heading.id}">${heading.textContent || heading.innerText}</a>`;
+
+        
+        outlineList.appendChild(listItem);
+    });
+    
+function removeActiveClasses() {
+  const outlineListItems = outlineList.querySelectorAll('li');
+  outlineListItems.forEach(item => item.classList.remove('active'));
+}
+
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  headings.forEach((heading) => {
+    
+    if (
+      heading.offsetTop <= fromTop &&
+      heading.offsetTop + heading.offsetHeight > fromTop
+    ) {
+      
+      const listItem = outlineList.querySelector(`li a[href="#${heading.id}"]`)?.parentNode;
+      if (listItem) {
+        removeActiveClasses();
+        listItem.classList.add('active');
+      }
+    }
+  });
+});
+});
+</script>
+
+
+  <section>
+    <div class="content">
+      <div class="navbar-sticky">
+        <div class="blog_nav_bar">
+    <img src="/favicon.ico" alt="" height="25px">
+    
+    
+    <a class="navbar-brand" href="/">&nbsp;&nbsp;Home</a>
+    
+    
+    
+    
+    <a class="navbar-brand" href="/blog">Posts</a>
+    
+    
+</div>
+ 
+
+<h3 style="font-size: 24px; font-weight:400">
+    <a class="title" href="/advanced_bash/">Command Line Basics</a>
+</h3>
+
+<div class="reading_time secondary_font text-muted ">
+    <span>
+        by Alejandra López Espino | Mar 8 2024 · 4 min read
+    </span>
+
+</div>
+
+
+
+
+<div class="tags_navigation">
+    
+    <a class="tag" href="/tags/bash/">#bash</a>
+    
+    <a class="tag" href="/tags/Linux/">#Linux</a>
+    
+    <a class="tag" href="/tags/command-line/">#command-line</a>
+    
+    <a class="tag" href="/tags/shell/">#shell</a>
+    
+    <a class="tag" href="/tags/RoarCollab/">#RoarCollab</a>
+    
+    <a class="tag" href="/tags/tutorial/">#tutorial</a>
+    
+</div>
+
+
+<hr style="margin-top: 10px; margin-bottom:10px" />
+
+      </div>
+      <h1 id="searching-a-pattern-in-a-set-of-pdfs">Searching a pattern in a set of pdfs</h1>
+<h2 id="prerrequisites">Prerrequisites</h2>
+<pre><code>1) homebrew (on mac): to install see ![homebrew's page](https://brew.sh/)
+2) pdfgrep. Once homebrew has been installed, type in the terminal
+</code></pre>
+<pre tabindex="0"><code>brew install pdfgrep
+</code></pre><p>and submit your system password when prompted.</p>
+<h2 id="how-to-do-it">How to do it</h2>
+<p>on the terminal type</p>
+<pre tabindex="0"><code>find ./ -name &#39;*.pdf&#39; | xargs -P 1 -R 1 -I % pdfgrep -irh -m 1 --color always -C 1 &#39;pattern&#39;
+</code></pre><p>where <code>pattern</code> is the word/phrase you want to look for in your pdfs.</p>
+<h1 id="using-pdf-toolkit-to-manipulate-pdfs">Using pdf toolkit to manipulate pdfs</h1>
+<h2 id="install-pdftk">Install pdftk</h2>
+<ul>
+<li>On mac using <code>homebrew</code></li>
+</ul>
+<pre tabindex="0"><code>brew install pdftk-java
+</code></pre><h2 id="merge-multiple-pdf-files">Merge multiple pdf files</h2>
+<pre tabindex="0"><code>pdftk file1.pdf file2.pdf file3.pdf cat output merged.pdf
+</code></pre><h2 id="combine-2-pdfs-in-interleaving-order">Combine 2 pdfs in interleaving order</h2>
+<pre tabindex="0"><code>pdftk A=odd.pdf B=even.pdf shuffle A B output collated.pdf
+</code></pre><h2 id="combine-2-pdfs-in-interleaving-order-reversing-the-pages-in-the-second-pdf">Combine 2 pdfs in interleaving order reversing the pages in the second pdf</h2>
+<pre tabindex="0"><code>pdftk A=recto.pdf B=verso.pdf shuffle A Bend-1 output collated.pdf
+</code></pre><p>source: <a href="https://unix.stackexchange.com/questions/53295/how-to-merge-2-pdf-files-with-interleaving-pages-order">https://unix.stackexchange.com/questions/53295/how-to-merge-2-pdf-files-with-interleaving-pages-order</a></p>
+<h2 id="locate-librariespackages">Locate libraries/Packages</h2>
+<h3 id="mac">Mac</h3>
+<pre tabindex="0"><code>locate library_name
+</code></pre><p>To update the list of packages</p>
+<pre tabindex="0"><code>sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+</code></pre><p>This is automatically done once per week but one can do so by running the command above.</p>
+<h2 id="find-out-whats-your-linux-distribution">Find out what&rsquo;s your Linux distribution</h2>
+<pre tabindex="0"><code>cat /etc/*-release
+</code></pre><h1 id="shell-environment">Shell environment</h1>
+<h2 id="changing-console-size">Changing console size</h2>
+<p>Introduction to environment variables TBW</p>
+<pre tabindex="0"><code>export COLUMNS=XXX
+export ROWS=YYY
+</code></pre><p>where <code>XXX</code> is the desired width and, <code>YYY</code>, the height.</p>
+<h1 id="description">Description</h1>
+<p>On Unix-like operating systems, a set of flags associated with each file determines who can access that file, and how they can access it. These flags are called file permissions or modes, as in &ldquo;mode of access.&rdquo; The command name <code>chmod</code> stands for &ldquo;change mode.&rdquo; It restricts the way a file can be accessed.
+In general, <code>chmod</code> commands take the form:</p>
+<pre tabindex="0"><code>chmod options permissions file name
+</code></pre><h2 id="syntax">Syntax</h2>
+<p>Here is the command using octal permissions notation:</p>
+<pre tabindex="0"><code>chmod 754 myfile
+</code></pre><p>Here the digits <code>7</code>, <code>5</code>, and <code>4</code> each individually represent the permissions for the <code>user</code>, <code>group</code>, and <code>others</code>, in that order. Each digit is a combination of the numbers <code>4</code>, <code>2</code>, <code>1</code>, and <code>0</code>:</p>
+<p><code>4</code> stands for &ldquo;read&rdquo;,
+<code>2</code> stands for &ldquo;write&rdquo;,
+<code>1</code> stands for &ldquo;execute&rdquo;, and
+<code>0</code> stands for &ldquo;no permission.&rdquo;
+So <code>7</code> is the combination of permissions <code>4+2+1</code> (read, write, and execute), <code>5</code> is <code>4+0+1</code> (read, no write, and execute), and <code>4</code> is <code>4+0+0</code> (read, no write, and no execute).</p>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-c</code>, <code>--changes</code></td>
+<td style="text-align:center">Like <code>--verbose</code>, but gives verbose output only when a change is actually made.</td>
+</tr>
+<tr>
+<td><code>-f</code>, <code>--silent</code>, <code>--quiet</code></td>
+<td style="text-align:center">Quiet mode; suppress most error messages.</td>
+</tr>
+<tr>
+<td><code>-v</code>, <code>--verbose</code></td>
+<td style="text-align:center">Verbose mode; output a diagnostic message for every file processed.</td>
+</tr>
+<tr>
+<td><code>--no-preserve-root</code></td>
+<td style="text-align:center">Do not treat &lsquo;/&rsquo; (the root directory) in any special way, which is the default setting.</td>
+</tr>
+<tr>
+<td><code>--preserve-root</code></td>
+<td style="text-align:center">Do not operate recursively on &lsquo;/&rsquo;.</td>
+</tr>
+<tr>
+<td><code>--reference=RFILE</code></td>
+<td style="text-align:center">Set permissions to match those of file <code>RFILE</code>, ignoring any specified <code>MODE</code>.</td>
+</tr>
+<tr>
+<td><code>-R</code>, <code>--recursive</code></td>
+<td style="text-align:center">Change files and directories recursively.</td>
+</tr>
+<tr>
+<td><code>--help</code></td>
+<td style="text-align:center">Display a help message and exit.</td>
+</tr>
+<tr>
+<td><code>--version</code></td>
+<td style="text-align:center">Output version information and exit.</td>
+</tr>
+</tbody>
+</table>
+<p>source: <a href="https://www.computerhope.com/unix/uchmod.htm">https://www.computerhope.com/unix/uchmod.htm</a></p>
+<h2 id="produce-a-beep-i-write-it-at-the-end-of-a-script-so-that-it-prompts-me-when-it-finished-running">Produce a beep (I write it at the end of a script so that it prompts me when it finished running)</h2>
+<pre tabindex="0"><code>echo -e &#34;\a&#34;
+</code></pre><h2 id="getting-values-in-an-array">Getting values in an array</h2>
+<p>You can extract words from a string (which is what the array elements are) using modifiers in the variable expansion: <code>#</code> (remove prefix), <code>##</code> (remove prefix, greedy), <code>%</code> (remove suffix), and <code>%%</code> (remove suffix, greedy).</p>
+<pre tabindex="0"><code>$ myarr=(&#39;hello big world!&#39; &#39;how are you&#39; &#39;where am I&#39;)
+$ echo &#34;${myarr[0]}&#34;      # Entire first element of the array
+hello big world!
+$ echo &#34;${myarr[0]##* }&#34;  # To get the last word, remove prefix through the last space
+world!
+$ echo &#34;${myarr[0]%% *}&#34;  # To get the first word, remove suffix starting with the first space
+hello
+$ tmp=&#34;${myarr[0]#* }&#34;    # The second word is harder; first remove through the first space...
+$ echo &#34;${tmp%% *}&#34;       # ...then get the first word of what remains
+big
+$ tmp=&#34;${myarr[0]#* * }&#34;  # The third word (which might not be the last)? remove through the second space...
+$ echo &#34;${tmp%% *}&#34;       # ...then the first word again
+world!
+</code></pre><p>Note: if you use my formula to extract the third word of a string that only has two words, the first trim will fail, and it&rsquo;ll wind up printing the first(!) word instead of a blank. Also, if you have two spaces in a row, this will treat it as a zero-length word with a space on each side of it&hellip;</p>
+<p>BTW, when building the array, I consider it a bit cleaner to use <code>+=(newelement)</code> rather than keeping track of the array index explicitly:</p>
+<pre tabindex="0"><code>myarr=()
+while read line, do
+    myarr+=(&#34;$line&#34;)
+done &lt; lines.txt
+</code></pre><p>source: <a href="https://stackoverflow.com/questions/15685736/how-to-extract-a-particular-element-from-an-array-in-bash">https://stackoverflow.com/questions/15685736/how-to-extract-a-particular-element-from-an-array-in-bash</a></p>
+<h2 id="print-text-or-variable-into-the-command-line">Print text or variable into the command line</h2>
+<pre tabindex="0"><code>echo
+</code></pre><h1 id="unrar-files">UnRAR files</h1>
+<ol>
+<li>In the terminal:</li>
+</ol>
+<pre tabindex="0"><code>cd /gpfs/scratch/axl5463
+wget https://www.rarlab.com/rar/rarlinux-x64-6.0.2.tar.gz
+tar xf rarlinux-x64-6.0.2.tar.gz
+</code></pre><ol start="2">
+<li>Go to your work folder where the .rar files are and do:</li>
+</ol>
+<pre tabindex="0"><code>/gpfs/scratch/axl5463/rar/unrar e FILENAME PATH/TO/EXTRACT
+</code></pre><p>if the <code>rar</code> file is password-protected</p>
+<pre tabindex="0"><code>/gpfs/scratch/axl5463/rar/unrar e -p FILENAME PATH/TO/EXTRACT
+</code></pre>
+    </div>
+  </section>
+</div>
+
+<style>
+
+  .flex-container {
+    display: flex;
+  }
+  .flex-container section {
+    flex: 1; 
+  }
+  .content {
+    width: 800px;  
+    top: 0;
+    vertical-align: top;
+    margin-left: 30px;
+  }
+  .navbar-sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;  
+    z-index: 99;  
+  }
+
+  :target:before {
+     
+    content: "";
+    display: block;
+    height: 270px;  
+    margin: -270px 0 0;  
+  }
+   
+  .content .blog_navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+</style>
+<footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+<script>
+    feather.replace()
+</script></body>
+
+</html>

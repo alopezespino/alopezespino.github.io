@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server on Alejandra López Espino</title>
+    <link>https://alopezespino.github.io/tags/server/</link>
+    <description>Recent content in Server on Alejandra López Espino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 08 Mar 2024 16:10:30 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Secure Remote Access: A Guide to SSH Keys for Servers and HPC Clusters</title>
+      <link>https://alopezespino.github.io/sshconfig/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/sshconfig/</guid>
+      <description>What are SSH keys SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&#xA;Benefits Leveraging SSH authentication can significantly enhance your research workflow with High Performance Computing (HPC) resources. It allows for seamless file exchanges between your local computer and the server directly from the terminal, eliminating the need to repeatedly input your account password. Moreover, SSH authentication enables you to work on your code locally while executing it remotely using, for instance, VS Code.</description>
+    </item>
+  </channel>
+</rss>

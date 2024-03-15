@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HPC on Alejandra López Espino</title>
+    <link>https://alopezespino.github.io/tags/hpc/</link>
+    <description>Recent content in HPC on Alejandra López Espino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Mar 2024 16:19:13 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/tags/hpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Submitting your First Job to Roar Collab</title>
+      <link>https://alopezespino.github.io/jobs/</link>
+      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
+      <guid>https://alopezespino.github.io/jobs/</guid>
+      <description>You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.&#xA;Step 1: Create a job submit script. Below is an example of such file, called job_submit.sh.&#xA;#!/bin/bash #SBATCH --nodes=1 #SBATCH --cpus-per-task=4 #SBATCH --time=1:00:00 #SBATCH --mem=1GB #SBATCH --job-name=job_test #SBATCH --output=output_%j.log #SBATCH --mail-user=&amp;lt;psu-id&amp;gt;@psu.</description>
+    </item>
+    <item>
+      <title>Secure Remote Access: A Guide to SSH Keys for Servers and HPC Clusters</title>
+      <link>https://alopezespino.github.io/sshconfig/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/sshconfig/</guid>
+      <description>What are SSH keys SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&#xA;Benefits Leveraging SSH authentication can significantly enhance your research workflow with High Performance Computing (HPC) resources. It allows for seamless file exchanges between your local computer and the server directly from the terminal, eliminating the need to repeatedly input your account password. Moreover, SSH authentication enables you to work on your code locally while executing it remotely using, for instance, VS Code.</description>
+    </item>
+    <item>
+      <title>Roar Collab Quickstart</title>
+      <link>https://alopezespino.github.io/rcollab/</link>
+      <pubDate>Tue, 05 Mar 2024 12:31:06 -0500</pubDate>
+      <guid>https://alopezespino.github.io/rcollab/</guid>
+      <description>Overview Roar Collab is Penn State&amp;rsquo;s High-Performance Computing (HPC) Cluster. In this post, I will lay out the basic tools needed to use it.&#xA;Here, I assume:&#xA;You have already created an account and have access. Otherwise, follow the official documentation for instructions. Basic knowledge on Linux and using the comand line/bash shell. If not, check &amp;ldquo;Command Line Basics&amp;rdquo;. For the remainder of this tutorial, I will refer to Roar Collab as Rcollab.</description>
+    </item>
+  </channel>
+</rss>

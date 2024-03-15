@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PennState on Alejandra López Espino</title>
+    <link>https://alopezespino.github.io/tags/pennstate/</link>
+    <description>Recent content in PennState on Alejandra López Espino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Mar 2024 12:31:06 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/tags/pennstate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Roar Collab Quickstart</title>
+      <link>https://alopezespino.github.io/rcollab/</link>
+      <pubDate>Tue, 05 Mar 2024 12:31:06 -0500</pubDate>
+      <guid>https://alopezespino.github.io/rcollab/</guid>
+      <description>Overview Roar Collab is Penn State&amp;rsquo;s High-Performance Computing (HPC) Cluster. In this post, I will lay out the basic tools needed to use it.&#xA;Here, I assume:&#xA;You have already created an account and have access. Otherwise, follow the official documentation for instructions. Basic knowledge on Linux and using the comand line/bash shell. If not, check &amp;ldquo;Command Line Basics&amp;rdquo;. For the remainder of this tutorial, I will refer to Roar Collab as Rcollab.</description>
+    </item>
+  </channel>
+</rss>

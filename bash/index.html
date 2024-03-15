@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="en-us"><head>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VC82P5VDDQ', { 'anonymize_ip': false });
+}
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    
+    <script src='/js/prism.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    
+    
+
+    <title>Alejandra López Espino | Command Line Basics</title>
+
+</head>
+<body class="container d-flex flex-column min-vh-100">
+<div class="flex-container">
+  <style>
+    .outline {
+        position: sticky;
+        top: 0;
+        left: 0px;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-left: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    @media (max-width: 700px) {
+        .outline {
+            display: none;
+        }
+    }
+
+    .outline h3 {
+        margin-top: 0;
+    }
+
+    .outline ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .outline li {
+        list-style-type: none;
+        margin-bottom: 5px;  
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .outline li a {
+        text-decoration: none;  
+        color: inherit;  
+    }
+    .outline li.level-0 {
+        font-weight: '900';
+        font-size: 'x-large';
+    }
+    .outline li.level-1 {
+        font-weight: 600;
+        text-indent: 0px;
+        text-align: left;
+    }
+
+    .outline li.level-2 {
+        font-weight: 400;
+        text-indent: 0px;
+        margin-left: 20px;
+    }
+
+    .outline li.level-3 {
+        font-weight: 200;
+        text-indent: 0px;
+        margin-left: 40px;
+        color: rgb(116, 114, 114);
+    }
+
+    .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+   .active {
+      background-color: #d3d3d3;  
+   }
+
+  
+    .outline .blog_navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+    aside {
+        position:sticky;
+        max-height: fit-content;
+    }
+</style>
+
+<aside class="outline">
+<div class="row w-100 justify-content-center">
+    <img class="rounded-circle" src="/images/profile.png" alt="profile_picture" id="profile_picture2"
+    style = "padding-top: 10px;" />
+    <h3
+    style="padding-top: 30px;
+    margin:0;
+    padding-bottom:0;
+    length:20px;
+    font-weight: 500;
+    text-align: left">Contents</h3>
+<hr style="margin-top: 2px;" />
+    <div id="outline-list"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const outlineList = document.getElementById("outline-list");
+    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'));
+    headings.shift(); 
+    
+
+    headings.forEach((heading, index) => {
+        
+        
+        
+       
+        const listItem = document.createElement("li");
+
+        
+        
+        if (index === 0) {
+            listItem.classList.add(`level-1`);
+        } else {
+            let currentLevel = parseInt(heading.tagName.substring(1), 10); 
+            listItem.classList.add(`level-${currentLevel}`);
+        }
+
+        
+        listItem.innerHTML = `<a href="#${heading.id}">${heading.textContent || heading.innerText}</a>`;
+
+        
+        outlineList.appendChild(listItem);
+    });
+    
+function removeActiveClasses() {
+  const outlineListItems = outlineList.querySelectorAll('li');
+  outlineListItems.forEach(item => item.classList.remove('active'));
+}
+
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  headings.forEach((heading) => {
+    
+    if (
+      heading.offsetTop <= fromTop &&
+      heading.offsetTop + heading.offsetHeight > fromTop
+    ) {
+      
+      const listItem = outlineList.querySelector(`li a[href="#${heading.id}"]`)?.parentNode;
+      if (listItem) {
+        removeActiveClasses();
+        listItem.classList.add('active');
+      }
+    }
+  });
+});
+});
+</script>
+
+
+  <section>
+    <div class="content">
+      <div class="navbar-sticky">
+        <div class="blog_nav_bar">
+    <img src="/favicon.ico" alt="" height="25px">
+    
+    
+    <a class="navbar-brand" href="/">&nbsp;&nbsp;Home</a>
+    
+    
+    
+    
+    <a class="navbar-brand" href="/blog">Posts</a>
+    
+    
+</div>
+ 
+
+<h3 style="font-size: 24px; font-weight:400">
+    <a class="title" href="/bash/">Command Line Basics</a>
+</h3>
+
+<div class="reading_time secondary_font text-muted ">
+    <span>
+        by Alejandra López Espino | Mar 8 2024 · 8 min read
+    </span>
+
+</div>
+
+
+
+
+<div class="tags_navigation">
+    
+    <a class="tag" href="/tags/bash/">#bash</a>
+    
+    <a class="tag" href="/tags/Linux/">#Linux</a>
+    
+    <a class="tag" href="/tags/Unix/">#Unix</a>
+    
+    <a class="tag" href="/tags/command-line/">#command-line</a>
+    
+    <a class="tag" href="/tags/shell/">#shell</a>
+    
+    <a class="tag" href="/tags/RoarCollab/">#RoarCollab</a>
+    
+    <a class="tag" href="/tags/tutorial/">#tutorial</a>
+    
+</div>
+
+
+<hr style="margin-top: 10px; margin-bottom:10px" />
+
+      </div>
+      <h3 id="what-is-the-command-line">What is the Command Line?</h3>
+<p>The command line, also known as a terminal or a shell, is a text-based interface that allows you to interact directly with your computer&rsquo;s operating system. It enables you to instruct your computer explicitly what tasks to perform.</p>
+<h3 id="high-performance-computing-hpc">High Performance Computing (HPC)</h3>
+<p>This direct contact becomes essential when working with high-performance computing (HPC) clusters, such as Roar Collab. Although Roar Collab operates on Red Hat Enterprise Linux 8 and may sometimes allow graphical interface (think dragging and clicking), extracting the full computational capabilities of these powerhouses often requires fluent command-line interaction. It&rsquo;s the difference between navigating the surface and taking a deep dive into your computer&rsquo;s functions - the command line gives you much more precision and options. This control is why understanding command line interaction is crucial for HPC environments.</p>
+<h3 id="understanding-the-notation">Understanding the Notation:</h3>
+<p>In this guide, the <code>&lt; &gt;</code> symbol is used to denote placeholders. Remember, these are not to be written literally, but are instead guides for where you input your unique values. For instance, when you see:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd &lt;myfolder&gt;
+</span></span></code></pre></div><p>Replace <code>&lt;myfolder&gt;</code> with the name of the directory you&rsquo;re navigating to.</p>
+<p>On the other hand, we use the <code>[ ]</code> brackets to denote optional parameters that can modify a command&rsquo;s behavior. Find them detailed below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls <span style="color:#f92672">[</span>-lh<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>By following these tips, you&rsquo;ll command line like a pro in no time! Stick with me as we dive deeper. 🚀</p>
+<h1 id="quickstart-with-common-commands">Quickstart with Common Commands</h1>
+<p>Mastering the command line might seem daunting at first, but fear not! Here are some basic commands to get you started.</p>
+<h2 id="navigating-your-system">Navigating your system</h2>
+<h3 id="locate-where-you-are">Locate where you are</h3>
+<p>Use the <code>pwd</code> command to &ldquo;print&rdquo; your working directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pwd
+</span></span></code></pre></div><h3 id="hop-between-folders">Hop between folders</h3>
+<p>Use the <code>cd</code> command followed by your desired directory path to change directories:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd &lt;directory_path&gt;
+</span></span></code></pre></div><p>Want to level up? Jump up three folders in a flash:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ../../..
+</span></span></code></pre></div><p>And if you want to go back to the previous directory you were in:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd -
+</span></span></code></pre></div><h3 id="peek-into-the-contents-of-a-folder">Peek into the contents of a folder</h3>
+<p>The <code>ls</code> command displays files and folders in your current directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls <span style="color:#f92672">[</span>-alth<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>Options <code>-a</code> and <code>-l</code> unmask hidden files and detail file properties, respectively. Add <code>t</code> to sort by last modified, and <code>h</code> to make file sizes easier to read.</p>
+<p><em>Deciphering <code>ls</code> colors</em></p>
+<ul>
+<li><strong>Blue</strong>: Denotes a directory</li>
+<li><strong>Green</strong>: Executable or recognized data file</li>
+<li><strong>Sky Blue</strong>: Symbolic link file</li>
+<li><strong>Yellow, black background</strong>: Device</li>
+<li><strong>Pink</strong>: Graphic image file</li>
+<li><strong>Red</strong>: Archive file</li>
+<li><strong>Red, black background</strong>: Broken link</li>
+</ul>
+<h3 id="delve-into-file-details">Delve into file details</h3>
+<p>The <code>stat</code> command fetches a file&rsquo;s stats and properties:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stat file_name.ext
+</span></span></code></pre></div><h3 id="scanning-through-extensive-txt-files">Scanning through extensive <code>.txt</code> files:</h3>
+<p>When dealing with large text files, it&rsquo;s not always practical to open the entire thing. Thankfully, <code>tail</code> and <code>head</code> come in handy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tail -n <span style="color:#ae81ff">100</span> ./file.txt
+</span></span></code></pre></div><p>With the above command, you get a snapshot of the most recent data - the last 100 lines, to be precise. Perfect for log files that are updated in real-time.</p>
+<p>In contrast, if you need to review the initial entries in the file, <code>head</code> gives you a peek at the start:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>head -n <span style="color:#ae81ff">100</span> ./file.txt
+</span></span></code></pre></div><p>With this, you can easily access the first 100 lines of your file. This is particularly useful when you need to understand the structure of a data file, as the file header is often found at the top.</p>
+<h3 id="check-folder-size">Check folder size</h3>
+<p>Use <code>du</code>, or the &ldquo;disk usage&rdquo; command, to reveal the size of a folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>du -hs /folder-path
+</span></span></code></pre></div><h2 id="mastering-bash-shortcuts">Mastering Bash Shortcuts</h2>
+<p>The Bash shell might seem tricky at first given its non-GUI nature. However, these essential keyboard shortcuts will have you navigating like a pro in no time.</p>
+<p>Here&rsquo;s a cheatsheet for your seamless command line journey:</p>
+<h3 id="reach-the-end-of-the-line-swiftly">Reach the end of the line swiftly</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctrl+e
+</span></span></code></pre></div><p>No need for painstaking arrow keys. This simple shortcut transports you straight to the line end.</p>
+<h3 id="dart-to-the-start-line-instantly">Dart to the start line instantly</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctrl+a
+</span></span></code></pre></div><p>Trapped at the end of your line? Don&rsquo;t panic! Use this shortcut to escape to the line beginning.</p>
+<h3 id="wipe-everything-before-cursor">Wipe everything before cursor</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctrl+u
+</span></span></code></pre></div><p>Need a clean slate to the left of your cursor? This shortcut erases all content before your cursor in one quick swoop.</p>
+<h3 id="erase-everything-after-cursor">Erase everything after cursor</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctrl+k
+</span></span></code></pre></div><p>Make short work of unwanted content to the right of your cursor. One press annihilates everything after your cursor.</p>
+<h3 id="scratch-the-itch-for-a-history-crawl">Scratch the itch for a history crawl</h3>
+<pre><code>No commands for this one! Simply use your up ⬆️ and down ⬇️ arrow keys. It's an effortless time-travel to previously executed commands.
+</code></pre>
+<h3 id="clipboard-fun">Clipboard Fun</h3>
+<pre><code>Remember, you don't have to retype commands! Simply select your desired command and press `CMD + V` to clone it.
+</code></pre>
+<h3 id="dig-out-hidden-treasures-from-history">Dig Out Hidden Treasures from History</h3>
+<pre><code>Eager to unearth a specific command from history?  `CTRL + R` is your friend. Start typing a keyword and the prompt will highlight the most recent occurrence of that word in your command history.
+</code></pre>
+<p>Navigating the Bash shell does not have to feel like stumbling in the dark. Use these shortcuts to turn on the lights! 💡</p>
+<h2 id="modifying-files-and-directories">Modifying files and directories</h2>
+<h3 id="create-a-new-directory">Create a new directory</h3>
+<p>Use the <code>mkdir</code> command to create a new directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir &lt;directory&gt;
+</span></span></code></pre></div><p>Hint: Use the <code>p</code> option to construct nested directories in a single command.</p>
+<h3 id="craft-an-empty-file">Craft an empty file</h3>
+<p>The <code>touch</code> command creates an empty file in your current directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch &lt;filename.ext&gt;
+</span></span></code></pre></div><h3 id="delete-directory-or-file">Delete directory or file</h3>
+<p>Use <code>rm</code> followed by the directory or file name to remove it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  rm -rf &lt;dir&gt;
+</span></span></code></pre></div><p>The <code>r</code> option indicates recursive deletion, eliminating the entire directory tree. Use <code>f</code> to force deletion, even if the directory is cluttered with files.</p>
+<h3 id="duplicate-a-file">Duplicate a file</h3>
+<p>Utilize the <code>cp</code> command to copy a file to a new location:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp pathto/file destination/path/
+</span></span></code></pre></div><h3 id="relocate-a-file">Relocate a file</h3>
+<p><code>mv</code> can move files from one place to another:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mv pathto/file destination/path/
+</span></span></code></pre></div><h2 id="unlock-command-guidance">Unlock command guidance</h2>
+<p>Unsure about a command? Let&rsquo;s get you some help.</p>
+<h3 id="quick-command-help">Quick Command Help</h3>
+<p>This fetches a brief descriptor of the command, as well as available options:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> help &lt;command&gt; <span style="color:#f92672">[</span>-dsm<span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul>
+<li>The <code>-d</code> option provides a succinct description</li>
+<li><code>-s</code> lists all options for the command</li>
+<li>The <code>-m</code> option offers a styled printout that resembles a manual page.</li>
+</ul>
+<h3 id="dig-into-detailed-documentation">Dig into detailed documentation</h3>
+<p>The <code>man</code> command cracks open the manual page for a command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>man &lt;command&gt;
+</span></span></code></pre></div><h1 id="piping-mastery">Piping Mastery</h1>
+<p>Let&rsquo;s unravel the mystery of piping—a powerful mechanism for chaining commands or redirecting input &amp; output flows in Linux. This guidance is a lifesaver for handling complex multi-step operations.</p>
+<h2 id="sequential-command-execution">Sequential Command Execution</h2>
+<p>Sometimes, we want to perform multiple commands one after the other. Linux allows such command queueing with <code>&amp;&amp;</code>. The second command will only execute once the first completes successfully.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd examples <span style="color:#f92672">&amp;&amp;</span> ls
+</span></span></code></pre></div><p>This command will first navigate to the &rsquo;examples&rsquo; directory (<code>cd examples</code>), and then list its contents (<code>ls</code>) if navigation was successful.</p>
+<h2 id="using-one-commands-output-as-anothers-input">Using One Command&rsquo;s Output as Another&rsquo;s Input</h2>
+<p>Ever wondered how to make commands communicate with each other? The pipe operator <code>|</code> makes it possible. It redirects the output of one command to serve as the input for the next command.</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>qstat | grep &lt;psuid&gt;
+</span></span></code></pre></div><p>Here, <code>qstat</code> fetches details of jobs in the queue, while <code>grep &lt;psuid&gt;</code> filters to show only jobs under your username.</p>
+<p>To list all files with a certain extension recursively, you could use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> ls -LR | grep .ext
+</span></span></code></pre></div><p><code>ls -LR</code> lists all files recursively, while <code>grep .ext</code> filters to display only files with &lsquo;.ext&rsquo; extension.</p>
+<h2 id="channel-command-output-to-files">Channel Command Output to Files</h2>
+<p>Want to maintain a record of command output without copying from the console? Command output redirection is your answer.</p>
+<p>To write the output to a file (overwriting existing content):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SomeCommand &gt; SomeFile.txt
+</span></span></code></pre></div><p>To append command output to an existing file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SomeCommand &gt;&gt; SomeFile.txt
+</span></span></code></pre></div><p>Need to catch errors (<code>stderr</code>) as well? Use <code>&amp;&gt;</code> to grab both output (<code>stdout</code>) and errors:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SomeCommand &amp;&gt; SomeFile.txt
+</span></span></code></pre></div><p>And for appending both output and errors to an existing file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SomeCommand &amp;&gt;&gt; SomeFile.txt
+</span></span></code></pre></div><p>But what if you want to see both output and errors on the console and save them to the file? Use the <code>tee</code> command!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>SomeCommand 2&gt;&amp;<span style="color:#ae81ff">1</span> | tee SomeFile.txt
+</span></span></code></pre></div><p>(For output only, simply remove the 2)</p>
+<h2 id="assigning-command-output-to-variables">Assigning Command Output to Variables</h2>
+<p>Say you want to save the output of a command to a variable for further processing. Bash has got you covered!</p>
+<p>Here are both syntax forms that do the same thing:</p>
+<p>Using <code>$(...)</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>command-name-here<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>command-name-here arg1<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>/path/to/command<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>/path/to/command arg1 arg2<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>Using backticks <code>`...`</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>command-name-here<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>command-name-here arg1<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>/path/to/command<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>var<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>/path/to/command arg1 arg2<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>With these tips, you&rsquo;re all set to tackle even the most complex piping and output redirection scenarios.</p>
+<h1 id="preserving-console-logs">Preserving Console Logs</h1>
+<p>For those key moments when you need to record your console activities, Bash&rsquo;s <code>script</code> command whisks into action.</p>
+<p>Initiate your log-making journey with this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>script path-to-log/logname.log
+</span></span></code></pre></div><p>When you&rsquo;re ready to wrap up your log, a simple <code>exit</code> command does the trick. To open your log later and reminisce about your console exploits, <code>vim</code> is here to help!</p>
+<p>Want to open a pre-existing log and continue saving your console tasks? Look no further than:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>script -a path-to-log/logname.log
+</span></span></code></pre></div><h1 id="executing-bash-scripts">Executing Bash Scripts</h1>
+<p>Before you can run your brilliant Bash scripts, you need to ensure they have execute permissions!</p>
+<p>Grant this vital permission with a quick:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x /path/to/yourscript.sh
+</span></span></code></pre></div><p>Now, you&rsquo;re all set to bring your script to life with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/path/to/yourscript.sh
+</span></span></code></pre></div><p>Wondering about the <code>.</code> before <code>path</code>? It simply stands for the current directory. Meaning, if <code>yourscript.sh</code> resides in the current directory, you can use the shorthand <code>./yourscript.sh</code>!</p>
+<p>For an in-depth look at permissions, keep an eye out for our advanced Bash tutorials!</p>
+<h1 id="bringing-it-all-together">Bringing It All Together</h1>
+<p>We&rsquo;ve journeyed through the realm of Bash scripting, exploring various commands, shortcuts, and tips. As we wrap up this chapter, we encourage you to keep the <a href="https://learncodethehardway.org/unix/bash_cheat_sheet.pdf">Bash Cheat Sheet</a> handy to enhance your Bash mastery.</p>
+<p>Honing your Bash skills equips you to navigate the Linux world more efficiently and empowers you with the tools to automate repetitive tasks. So, continue your exploration and Happy Bashing!</p>
+<!-- For more details about Permissions check ... section in the advanced bash post -->
+
+    </div>
+  </section>
+</div>
+
+<style>
+
+  .flex-container {
+    display: flex;
+  }
+  .flex-container section {
+    flex: 1; 
+  }
+  .content {
+    width: 800px;  
+    top: 0;
+    vertical-align: top;
+    margin-left: 30px;
+  }
+  .navbar-sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;  
+    z-index: 99;  
+  }
+
+  :target:before {
+     
+    content: "";
+    display: block;
+    height: 270px;  
+    margin: -270px 0 0;  
+  }
+   
+  .content .blog_navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+</style>
+<footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+<script>
+    feather.replace()
+</script></body>
+
+</html>

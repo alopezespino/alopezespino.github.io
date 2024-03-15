@@ -6,42 +6,49 @@
     <description>Recent content in Blogs on Alejandra López Espino</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jan 2021 16:12:29 -0700</lastBuildDate><atom:link href="https://alopezespino.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Mar 2024 23:30:33 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Picture Your ML On Top. Read This And Make It So</title>
-      <link>https://alopezespino.github.io/blog/blog4/</link>
-      <pubDate>Mon, 11 Jan 2021 16:12:29 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/blog/blog4/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget dui justo. Sed bibendum sollicitudin neque, et iaculis ligula dapibus eget. Etiam faucibus augue non posuere blandit. Phasellus ex ex, ultricies quis eleifend vel, imperdiet a felis. Sed ipsum velit, ullamcorper nec lacus fermentum, ullamcorper sagittis libero. Pellentesque hendrerit quam eget nunc ullamcorper mattis. Etiam sed nisi ac ipsum semper interdum. Nunc vulputate vitae nibh vitae convallis. Cras in ante arcu.</description>
+      <title>Text Processing with RegEx</title>
+      <link>https://alopezespino.github.io/regex/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/regex/</guid>
+      <description>Regular expressions (regex) are powerful string matching tools that use pattern-matching techniques for complex searching and manipulating. They occur across many programming languages, but also dominate command-line text-processing tools such as sed and awk in Unix-like systems.&#xA;What are Regular Expressions? Regular expressions are a sequence of characters representing a search pattern. This pattern can be used within string searching algorithms to &amp;ldquo;find&amp;rdquo; or &amp;ldquo;find and replace&amp;rdquo; textual data.&#xA;Common Regular Expressions The table below is based on RegExr&amp;rsquo;s cheatsheet.</description>
     </item>
-    
     <item>
-      <title>5 Best Ways To Sell ML</title>
-      <link>https://alopezespino.github.io/blog/blog3/</link>
-      <pubDate>Tue, 12 May 2020 16:11:56 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/blog/blog3/</guid>
-      <description>Pellentesque dapibus nec velit sit amet venenatis. Nam mauris elit, feugiat vitae massa a, scelerisque pretium justo. Aliquam eu quam suscipit, gravida dolor auctor, porttitor risus. Integer at dui blandit, scelerisque nunc vel, gravida neque. Vivamus at nisi lacinia, bibendum ipsum a, dignissim nibh. Ut urna eros, consequat ut tristique id, egestas non lectus. Cras placerat condimentum orci, et cursus tortor tempus in. Aenean sodales leo sed scelerisque molestie. Duis tempus lectus sed velit fermentum, quis auctor dolor mattis.</description>
+      <title>Vim</title>
+      <link>https://alopezespino.github.io/vim/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/vim/</guid>
+      <description>Overwiew Vim is a highly configurable text editor renowned for its efficiency and power. It&amp;rsquo;s built to enable efficient text editing, making it a popular choice for developers and system administrators.&#xA;In this post, I put the commands that I use the most, but I also recommend this interactive Vim tutorial&#xA;Open Vim To open vim, simply type the following in the command-line&#xA;vim &amp;lt;path/to/file&amp;gt; where &amp;lt;path/to/file&amp;gt; can be the path of any text-based file.</description>
     </item>
-    
     <item>
-      <title>7 Ways To Keep Your ML Growing Without Burning The Midnight Oil</title>
-      <link>https://alopezespino.github.io/blog/blog2/</link>
-      <pubDate>Fri, 07 Jun 2019 16:04:19 -0700</pubDate>
-      
-      <guid>https://alopezespino.github.io/blog/blog2/</guid>
-      <description>Nulla fermentum blandit metus sit amet congue. Nunc hendrerit eleifend magna, quis posuere nulla eleifend eget. Pellentesque quis nulla eu massa facilisis sodales in quis urna. Vestibulum aliquam metus id risus volutpat iaculis. Sed malesuada nunc cursus risus consectetur suscipit. Quisque sit amet leo mattis, sagittis purus eu, tristique sapien. Vestibulum gravida dictum aliquam. Etiam magna neque, tempus et aliquet sed, sollicitudin sed tellus. Sed euismod, lorem eget aliquet ultrices, nisl eros hendrerit nunc, in gravida augue leo id diam.</description>
+      <title>Submitting your First Job to Roar Collab</title>
+      <link>https://alopezespino.github.io/jobs/</link>
+      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
+      <guid>https://alopezespino.github.io/jobs/</guid>
+      <description>You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.&#xA;Step 1: Create a job submit script. Below is an example of such file, called job_submit.sh.&#xA;#!/bin/bash #SBATCH --nodes=1 #SBATCH --cpus-per-task=4 #SBATCH --time=1:00:00 #SBATCH --mem=1GB #SBATCH --job-name=job_test #SBATCH --output=output_%j.log #SBATCH --mail-user=&amp;lt;psu-id&amp;gt;@psu.</description>
     </item>
-    
     <item>
-      <title>Secrets To ML – Even In This Down Economy</title>
-      <link>https://alopezespino.github.io/blog/blog1/</link>
-      <pubDate>Fri, 18 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://alopezespino.github.io/blog/blog1/</guid>
-      <description>Nulla fermentum blandit metus sit amet congue. Nunc hendrerit eleifend magna, quis posuere nulla eleifend eget. Pellentesque quis nulla eu massa facilisis sodales in quis urna. Vestibulum aliquam metus id risus volutpat iaculis. Sed malesuada nunc cursus risus consectetur suscipit. Quisque sit amet leo mattis, sagittis purus eu, tristique sapien. Vestibulum gravida dictum aliquam. Etiam magna neque, tempus et aliquet sed, sollicitudin sed tellus. Sed euismod, lorem eget aliquet ultrices, nisl eros hendrerit nunc, in gravida augue leo id diam.</description>
+      <title>Command Line Basics</title>
+      <link>https://alopezespino.github.io/bash/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/bash/</guid>
+      <description>What is the Command Line? The command line, also known as a terminal or a shell, is a text-based interface that allows you to interact directly with your computer&amp;rsquo;s operating system. It enables you to instruct your computer explicitly what tasks to perform.&#xA;High Performance Computing (HPC) This direct contact becomes essential when working with high-performance computing (HPC) clusters, such as Roar Collab. Although Roar Collab operates on Red Hat Enterprise Linux 8 and may sometimes allow graphical interface (think dragging and clicking), extracting the full computational capabilities of these powerhouses often requires fluent command-line interaction.</description>
     </item>
-    
+    <item>
+      <title>Secure Remote Access: A Guide to SSH Keys for Servers and HPC Clusters</title>
+      <link>https://alopezespino.github.io/sshconfig/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/sshconfig/</guid>
+      <description>What are SSH keys SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&#xA;Benefits Leveraging SSH authentication can significantly enhance your research workflow with High Performance Computing (HPC) resources. It allows for seamless file exchanges between your local computer and the server directly from the terminal, eliminating the need to repeatedly input your account password. Moreover, SSH authentication enables you to work on your code locally while executing it remotely using, for instance, VS Code.</description>
+    </item>
+    <item>
+      <title>Roar Collab Quickstart</title>
+      <link>https://alopezespino.github.io/rcollab/</link>
+      <pubDate>Tue, 05 Mar 2024 12:31:06 -0500</pubDate>
+      <guid>https://alopezespino.github.io/rcollab/</guid>
+      <description>Overview Roar Collab is Penn State&amp;rsquo;s High-Performance Computing (HPC) Cluster. In this post, I will lay out the basic tools needed to use it.&#xA;Here, I assume:&#xA;You have already created an account and have access. Otherwise, follow the official documentation for instructions. Basic knowledge on Linux and using the comand line/bash shell. If not, check &amp;ldquo;Command Line Basics&amp;rdquo;. For the remainder of this tutorial, I will refer to Roar Collab as Rcollab.</description>
+    </item>
   </channel>
 </rss>

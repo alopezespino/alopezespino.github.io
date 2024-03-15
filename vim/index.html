@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en-us"><head>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-VC82P5VDDQ', { 'anonymize_ip': false });
+}
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    <link rel="stylesheet" href="/css/prism.css" />
+    
+    <script src='/js/prism.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+
+    
+    
+
+    <title>Alejandra López Espino | Vim</title>
+
+</head>
+<body class="container d-flex flex-column min-vh-100">
+<div class="flex-container">
+  <style>
+    .outline {
+        position: sticky;
+        top: 0;
+        left: 0px;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-left: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    @media (max-width: 700px) {
+        .outline {
+            display: none;
+        }
+    }
+
+    .outline h3 {
+        margin-top: 0;
+    }
+
+    .outline ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .outline li {
+        list-style-type: none;
+        margin-bottom: 5px;  
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .outline li a {
+        text-decoration: none;  
+        color: inherit;  
+    }
+    .outline li.level-0 {
+        font-weight: '900';
+        font-size: 'x-large';
+    }
+    .outline li.level-1 {
+        font-weight: 600;
+        text-indent: 0px;
+        text-align: left;
+    }
+
+    .outline li.level-2 {
+        font-weight: 400;
+        text-indent: 0px;
+        margin-left: 20px;
+    }
+
+    .outline li.level-3 {
+        font-weight: 200;
+        text-indent: 0px;
+        margin-left: 40px;
+        color: rgb(116, 114, 114);
+    }
+
+    .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+   .active {
+      background-color: #d3d3d3;  
+   }
+
+  
+    .outline .blog_navbar {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+    aside {
+        position:sticky;
+        max-height: fit-content;
+    }
+</style>
+
+<aside class="outline">
+<div class="row w-100 justify-content-center">
+    <img class="rounded-circle" src="/images/profile.png" alt="profile_picture" id="profile_picture2"
+    style = "padding-top: 10px;" />
+    <h3
+    style="padding-top: 30px;
+    margin:0;
+    padding-bottom:0;
+    length:20px;
+    font-weight: 500;
+    text-align: left">Contents</h3>
+<hr style="margin-top: 2px;" />
+    <div id="outline-list"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const outlineList = document.getElementById("outline-list");
+    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'));
+    headings.shift(); 
+    
+
+    headings.forEach((heading, index) => {
+        
+        
+        
+       
+        const listItem = document.createElement("li");
+
+        
+        
+        if (index === 0) {
+            listItem.classList.add(`level-1`);
+        } else {
+            let currentLevel = parseInt(heading.tagName.substring(1), 10); 
+            listItem.classList.add(`level-${currentLevel}`);
+        }
+
+        
+        listItem.innerHTML = `<a href="#${heading.id}">${heading.textContent || heading.innerText}</a>`;
+
+        
+        outlineList.appendChild(listItem);
+    });
+    
+function removeActiveClasses() {
+  const outlineListItems = outlineList.querySelectorAll('li');
+  outlineListItems.forEach(item => item.classList.remove('active'));
+}
+
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  headings.forEach((heading) => {
+    
+    if (
+      heading.offsetTop <= fromTop &&
+      heading.offsetTop + heading.offsetHeight > fromTop
+    ) {
+      
+      const listItem = outlineList.querySelector(`li a[href="#${heading.id}"]`)?.parentNode;
+      if (listItem) {
+        removeActiveClasses();
+        listItem.classList.add('active');
+      }
+    }
+  });
+});
+});
+</script>
+
+
+  <section>
+    <div class="content">
+      <div class="navbar-sticky">
+        <div class="blog_nav_bar">
+    <img src="/favicon.ico" alt="" height="25px">
+    
+    
+    <a class="navbar-brand" href="/">&nbsp;&nbsp;Home</a>
+    
+    
+    
+    
+    <a class="navbar-brand" href="/blog">Posts</a>
+    
+    
+</div>
+ 
+
+<h3 style="font-size: 24px; font-weight:400">
+    <a class="title" href="/vim/">Vim</a>
+</h3>
+
+<div class="reading_time secondary_font text-muted ">
+    <span>
+        by Alejandra López Espino | Mar 9 2024 · 3 min read
+    </span>
+
+</div>
+
+
+
+
+<div class="tags_navigation">
+    
+    <a class="tag" href="/tags/bash/">#bash</a>
+    
+    <a class="tag" href="/tags/Linux/">#Linux</a>
+    
+    <a class="tag" href="/tags/text-edit/">#text-edit</a>
+    
+    <a class="tag" href="/tags/command-line/">#command-line</a>
+    
+    <a class="tag" href="/tags/tutorial/">#tutorial</a>
+    
+</div>
+
+
+<hr style="margin-top: 10px; margin-bottom:10px" />
+
+      </div>
+      <h1 id="overwiew">Overwiew</h1>
+<p>Vim is a highly configurable text editor renowned for its efficiency and power. It&rsquo;s built to enable efficient text editing, making it a popular choice for developers and system administrators.</p>
+<p>In this post, I put the commands that I use the most, but I also recommend <a href="https://www.openvim.com">this <strong>interactive Vim tutorial</strong></a></p>
+<h2 id="open-vim">Open Vim</h2>
+<p>To open vim, simply type the following in the command-line</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim &lt;path/to/file&gt;
+</span></span></code></pre></div><p>where <code>&lt;path/to/file&gt;</code> can be the path of any text-based file. If <code>file</code> doesn&rsquo;t exist, then it will be created.</p>
+<p>You will see something similar to</p>
+<p><img src="/images/vim_empty_file.png" alt="vim"></p>
+<p>At this point vim is in <em>navigation mode</em> which means you can move around in the document but not make changes.
+To switch to <em>insert mode</em> type <code>i</code>. Then you can add text.
+<img src="/images/insert_mode.png" alt="vim"></p>
+<p>To exit insert mode just type <code>ESC</code>. To exit vim, simply type <code>:x</code>, if you want to save the changes, or <code>:q!</code> to discard them.</p>
+<h1 id="popular-commands">Popular Commands</h1>
+<p>Here are some of the most commonly used Vim commands:</p>
+<h2 id="navigation">Navigation</h2>
+<ul>
+<li>
+<p><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code>: Move cursor left, down, up, right respectively.</p>
+</li>
+<li>
+<p><code>w</code>: Jump forward to the start of a word.</p>
+</li>
+<li>
+<p><code>b</code>: Jump backward to the start of a word.</p>
+</li>
+<li>
+<p><code>G</code>: Go to the end of the file.</p>
+</li>
+<li>
+<p><code>gg</code>: Go to the beginning of the file.</p>
+</li>
+</ul>
+<h2 id="search">Search</h2>
+<ul>
+<li><code>*</code>: Highlight all occurrences of the word that is under the cursor. To stop highlighting <code>:noh</code> or <code>:nohlsearch</code>.</li>
+<li>To search for a word, type <code>/</code> followed by the word, then <code>Enter</code>. Type <code>n</code> to jump to the next ocurrence.</li>
+</ul>
+<h2 id="editing">Editing</h2>
+<ul>
+<li>
+<p><code>i</code>: Enter insert mode at the current cursor location.</p>
+</li>
+<li>
+<p><code>a</code>: Enter insert mode after the current cursor location.</p>
+</li>
+<li>
+<p><code>o</code>: Open a new line below the current line and enter insert mode.</p>
+</li>
+<li>
+<p><code>dd</code>: Delete the current line.</p>
+</li>
+<li>
+<p><code>u</code>: Undo the last operation.</p>
+</li>
+<li>
+<p><code>Ctrl + r</code>: Redo the last undo.</p>
+</li>
+</ul>
+<h3 id="replacements">Replacements</h3>
+<p>Vim uses <em>regular expressions</em> to replace patterns inside the text. The syntax is very similar to the <code>sed</code> bash command. Suppose we want to substitute all occurences of <code>pattern</code> to <code>replacement</code> in the text. Then we simply:</p>
+<ol>
+<li>type <code>ESC</code> to exit the insert mode</li>
+<li>type <code>s/pattern/replacement/g</code> + <code>ENTER</code></li>
+</ol>
+<p><em>NOTE: For more details on this, check <a href="https://alopezespino.github.io/regex/">&ldquo;Text Processing with RegEx&rdquo;</a></em></p>
+<h2 id="visual-mode">Visual Mode</h2>
+<ul>
+<li>Start visual mode typing <code>v</code></li>
+<li>To comment a block of code:
+<ol>
+<li>scroll or move with arrows to select block</li>
+<li>Type <code>: s/^/#</code> + <code>Enter</code></li>
+</ol>
+</li>
+<li>To uncomment a block of code:
+<ol>
+<li>Put cursor on first <code>#</code>character and type <code>CTRL</code>+<code>v</code></li>
+<li>Scroll until last line of block</li>
+<li>Type <code>x</code></li>
+</ol>
+</li>
+<li>Copy a block with <code>y</code></li>
+<li>Cut a block with <code>d</code></li>
+<li>Paste a block with <code>p</code></li>
+<li>Indent a block with <code>&gt;</code> or <code>&lt;</code></li>
+</ul>
+<h2 id="saving-and-exiting">Saving and Exiting</h2>
+<ul>
+<li>
+<p><code>:w + Enter</code>: Save the changes.</p>
+</li>
+<li>
+<p><code>:q + Enter</code>: Quit Vim (will not work if there are unsaved changes).</p>
+</li>
+<li>
+<p><code>:wq + Enter</code> or <code>:x + Enter</code>: Save the changes and quit Vim.</p>
+</li>
+<li>
+<p><code>:q! + Enter</code>: Quit Vim without saving the changes.</p>
+</li>
+</ul>
+<p>Remember, <code>Vim</code> has a steep learning curve, but once you get the hang of it, it can significantly enhance your text-editing efficiency.</p>
+
+    </div>
+  </section>
+</div>
+
+<style>
+
+  .flex-container {
+    display: flex;
+  }
+  .flex-container section {
+    flex: 1; 
+  }
+  .content {
+    width: 800px;  
+    top: 0;
+    vertical-align: top;
+    margin-left: 30px;
+  }
+  .navbar-sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;  
+    z-index: 99;  
+  }
+
+  :target:before {
+     
+    content: "";
+    display: block;
+    height: 270px;  
+    margin: -270px 0 0;  
+  }
+   
+  .content .blog_navbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
+</style>
+<footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
+    <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
+    Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">
+    created by Avicenna
+    (MIT)</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+<script>
+    feather.replace()
+</script></body>
+
+</html>

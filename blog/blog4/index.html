@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en-us"><head>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VC82P5VDDQ"></script>
 <script>
@@ -26,17 +26,151 @@ if (!doNotTrack) {
         href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Serif+JP&family=Cormorant+Garamond&family=Libre+Baskerville&family=Source+Serif+Pro&family=Crimson+Text&family=Inter&family=Crimson+Pro&family=Literata&family=Ubuntu+Mono&family=Inter&family=Roboto">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     
+    <link rel="stylesheet" href="/css/prism.css" />
+    
+    <script src='/js/prism.js'></script>
+    <link rel="stylesheet" href="/css/custom.css">
+
+    
     
 
     <title>Alejandra López Espino | Picture Your ML On Top. Read This And Make It So</title>
 
 </head>
 <body class="container d-flex flex-column min-vh-100">
+<style>
+    .outline {
+        position: fixed;
+        top: 50px;
+        left: 40px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+
+    .outline h3 {
+        margin-top: 0;
+    }
+
+    .outline ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .outline li {
+        list-style-type: none;
+        margin-bottom: 5px;  
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .outline li a {
+        text-decoration: none;  
+        color: inherit;  
+    }
+    .outline li.level-0 {
+        font-weight: '900';
+        font-size: 'larger';
+    }
+    .outline li.level-1 {
+        font-weight: 'bold';
+        text-indent: 15px;
+    }
+
+    .outline li.level-2 {
+        font-weight: 300;
+        text-indent: 30px;
+    }
+
+    .outline li.level-3 {
+        font-weight: 300;
+        text-indent: 45px;
+        color: rgb(183, 179, 179);
+    }
+
+    .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+   .active {
+      background-color: #d3d3d3;  
+   }
+</style>
+
+<aside class="outline">
+    
 
 <div class="blog_nav_bar secondary_font ">
+<img src="/favicon.ico" alt="Your image">
+    
+</div>
+    <h1>Contents</h1>
+    <div id="outline-list"></div>
+</aside>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const outlineList = document.getElementById("outline-list");
+    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5'));
+    headings.shift(); 
+    headings.shift();
+
+    headings.forEach((heading) => {
+        
+        if (!heading.id) {
+        heading.id = 'section-' + (index + 1);
+        }
+        const listItem = document.createElement("li");
+        const currentLevel = parseInt(heading.tagName.substring(1), 10); 
+
+        
+        listItem.classList.add(`level-${currentLevel - 1}`);
+
+        
+        listItem.innerHTML = `<a href="#${heading.id}">${heading.textContent || heading.innerText}</a>`;
+
+        
+        outlineList.appendChild(listItem);
+    });
+    
+function removeActiveClasses() {
+  const outlineListItems = outlineList.querySelectorAll('li');
+  outlineListItems.forEach(item => item.classList.remove('active'));
+}
+
+
+window.addEventListener('scroll', () => {
+  let fromTop = window.scrollY;
+
+  headings.forEach((heading) => {
+    
+    if (
+      heading.offsetTop <= fromTop &&
+      heading.offsetTop + heading.offsetHeight > fromTop
+    ) {
+      
+      const listItem = outlineList.querySelector(`li a[href="#${heading.id}"]`)?.parentNode;
+      if (listItem) {
+        removeActiveClasses();
+        listItem.classList.add('active');
+      }
+    }
+  });
+});
+});
+</script>
+
+
+<div class="content-wrapper">
+    <div class="content">
+        <div class="blog_nav_bar secondary_font ">
     
     
-    <a class="navbar-brand" href="/">about</a>
+    <a class="navbar-brand" href="/">home</a>
+    
     
     
     
@@ -45,7 +179,7 @@ if (!doNotTrack) {
     
 </div>
 
-
+        
 
 <h3>
     <a class="title" href="/blog/blog4/">Picture Your ML On Top. Read This And Make It So</a>
@@ -53,7 +187,7 @@ if (!doNotTrack) {
 
 <div class="reading_time secondary_font text-muted ">
     <span>
-        Jan 11 2021 · 4 min read
+        by Alejandra López Espino | Jan 11 2021 · 4 min read
     </span>
 
 </div>
@@ -72,7 +206,7 @@ if (!doNotTrack) {
 </div>
 
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget dui justo. Sed bibendum sollicitudin neque, et iaculis ligula dapibus eget. Etiam faucibus augue non posuere blandit. Phasellus ex ex, ultricies quis eleifend vel, imperdiet a felis. Sed ipsum velit, ullamcorper nec lacus fermentum, ullamcorper sagittis libero. Pellentesque hendrerit quam eget nunc ullamcorper mattis. Etiam sed nisi ac ipsum semper interdum. Nunc vulputate vitae nibh vitae convallis. Cras in ante arcu. Aliquam tincidunt rhoncus lorem, at porta nibh vehicula ut. Aenean laoreet, nibh in ullamcorper luctus, purus neque sollicitudin velit, vitae euismod odio orci quis erat. Nam cursus lorem et velit pulvinar, sagittis blandit odio cursus. Ut non bibendum ligula. Nam interdum, augue sed commodo mollis, est ante luctus ipsum, in convallis sapien velit ac libero. Fusce vitae ante ac leo commodo semper a id justo.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget dui justo. Sed bibendum sollicitudin neque, et iaculis ligula dapibus eget. Etiam faucibus augue non posuere blandit. Phasellus ex ex, ultricies quis eleifend vel, imperdiet a felis. Sed ipsum velit, ullamcorper nec lacus fermentum, ullamcorper sagittis libero. Pellentesque hendrerit quam eget nunc ullamcorper mattis. Etiam sed nisi ac ipsum semper interdum. Nunc vulputate vitae nibh vitae convallis. Cras in ante arcu. Aliquam tincidunt rhoncus lorem, at porta nibh vehicula ut. Aenean laoreet, nibh in ullamcorper luctus, purus neque sollicitudin velit, vitae euismod odio orci quis erat. Nam cursus lorem et velit pulvinar, sagittis blandit odio cursus. Ut non bibendum ligula. Nam interdum, augue sed commodo mollis, est ante luctus ipsum, in convallis sapien velit ac libero. Fusce vitae ante ac leo commodo semper a id justo.</p>
 <div class="toc ">
     <div>
         <strong>Table of Contents</strong>
@@ -96,6 +230,7 @@ if (!doNotTrack) {
 </nav>
     </div>
 </div>
+
 <h1 id="header-i">Header <code>I</code></h1>
 <p>Nulla <code>fermentum blandit metus</code> sit amet congue. Nunc hendrerit eleifend magna, quis posuere nulla eleifend eget. Pellentesque quis nulla eu massa facilisis sodales in quis urna. Vestibulum aliquam metus id risus volutpat iaculis. Sed malesuada nunc cursus risus consectetur suscipit. Quisque sit amet leo mattis, sagittis purus eu, tristique sapien. Vestibulum gravida dictum aliquam. Etiam magna neque, tempus et aliquet sed, sollicitudin sed tellus. Sed euismod, lorem eget aliquet ultrices, nisl eros hendrerit nunc, in gravida augue leo id diam. Integer sed nisi laoreet, pretium turpis eu, tincidunt tellus. Sed at auctor est, eu consequat urna.</p>
 <h2 id="header-2">Header 2</h2>
@@ -113,7 +248,30 @@ if (!doNotTrack) {
 <h1 id="header-ii">Header <code>II</code></h1>
 <p>Nulla fermentum blandit metus sit amet congue. Nunc hendrerit eleifend magna, quis posuere nulla eleifend eget. Pellentesque quis nulla eu massa facilisis sodales in quis urna. Vestibulum aliquam metus id risus volutpat iaculis. Sed malesuada nunc cursus risus consectetur suscipit. Quisque sit amet leo mattis, sagittis purus eu, tristique sapien. Vestibulum gravida dictum aliquam. Etiam magna neque, tempus et aliquet sed, sollicitudin sed tellus. Sed euismod, lorem eget aliquet ultrices, nisl eros hendrerit nunc, in gravida augue leo id diam. Integer sed nisi laoreet, pretium turpis eu, tincidunt tellus. Sed at auctor est, eu consequat urna.</p>
 
+    </div>
+</div>
 
+<style>
+    .content-wrapper {
+        max-width: 700px;  
+        margin: 0 auto;  
+    }
+
+    .content {
+        width: 100%;  
+    }
+
+     
+    .content .blog_navbar {
+        position: fixed;
+        top: 50px;
+        left: 40px;
+        width: 300px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+    }
+</style>
 <footer class="mt-auto d-flex justify-content-center text-muted small secondary_font">
     <p style='color: #E8E8E9'>Copyright (c) 2022, Alejandra Lopez
     Espino, <a href="https://github.com/hadisinaee/avicenna" style="color: #E8E8E9">

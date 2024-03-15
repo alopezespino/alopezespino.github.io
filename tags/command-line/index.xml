@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command-Line on Alejandra López Espino</title>
+    <link>https://alopezespino.github.io/tags/command-line/</link>
+    <description>Recent content in Command-Line on Alejandra López Espino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Mar 2024 23:30:33 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Text Processing with RegEx</title>
+      <link>https://alopezespino.github.io/regex/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/regex/</guid>
+      <description>Regular expressions (regex) are powerful string matching tools that use pattern-matching techniques for complex searching and manipulating. They occur across many programming languages, but also dominate command-line text-processing tools such as sed and awk in Unix-like systems.&#xA;What are Regular Expressions? Regular expressions are a sequence of characters representing a search pattern. This pattern can be used within string searching algorithms to &amp;ldquo;find&amp;rdquo; or &amp;ldquo;find and replace&amp;rdquo; textual data.&#xA;Common Regular Expressions The table below is based on RegExr&amp;rsquo;s cheatsheet.</description>
+    </item>
+    <item>
+      <title>Vim</title>
+      <link>https://alopezespino.github.io/vim/</link>
+      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
+      <guid>https://alopezespino.github.io/vim/</guid>
+      <description>Overwiew Vim is a highly configurable text editor renowned for its efficiency and power. It&amp;rsquo;s built to enable efficient text editing, making it a popular choice for developers and system administrators.&#xA;In this post, I put the commands that I use the most, but I also recommend this interactive Vim tutorial&#xA;Open Vim To open vim, simply type the following in the command-line&#xA;vim &amp;lt;path/to/file&amp;gt; where &amp;lt;path/to/file&amp;gt; can be the path of any text-based file.</description>
+    </item>
+    <item>
+      <title>Command Line Basics</title>
+      <link>https://alopezespino.github.io/bash/</link>
+      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
+      <guid>https://alopezespino.github.io/bash/</guid>
+      <description>What is the Command Line? The command line, also known as a terminal or a shell, is a text-based interface that allows you to interact directly with your computer&amp;rsquo;s operating system. It enables you to instruct your computer explicitly what tasks to perform.&#xA;High Performance Computing (HPC) This direct contact becomes essential when working with high-performance computing (HPC) clusters, such as Roar Collab. Although Roar Collab operates on Red Hat Enterprise Linux 8 and may sometimes allow graphical interface (think dragging and clicking), extracting the full computational capabilities of these powerhouses often requires fluent command-line interaction.</description>
+    </item>
+  </channel>
+</rss>

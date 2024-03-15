@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MRE on Alejandra López Espino</title>
+    <link>https://alopezespino.github.io/tags/mre/</link>
+    <description>Recent content in MRE on Alejandra López Espino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Mar 2024 16:19:13 -0500</lastBuildDate>
+    <atom:link href="https://alopezespino.github.io/tags/mre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Submitting your First Job to Roar Collab</title>
+      <link>https://alopezespino.github.io/jobs/</link>
+      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
+      <guid>https://alopezespino.github.io/jobs/</guid>
+      <description>You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.&#xA;Step 1: Create a job submit script. Below is an example of such file, called job_submit.sh.&#xA;#!/bin/bash #SBATCH --nodes=1 #SBATCH --cpus-per-task=4 #SBATCH --time=1:00:00 #SBATCH --mem=1GB #SBATCH --job-name=job_test #SBATCH --output=output_%j.log #SBATCH --mail-user=&amp;lt;psu-id&amp;gt;@psu.</description>
+    </item>
+  </channel>
+</rss>
