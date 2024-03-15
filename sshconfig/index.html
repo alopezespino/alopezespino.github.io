@@ -34,7 +34,7 @@ if (!doNotTrack) {
     
     
 
-    <title>Alejandra López Espino | Secure Remote Access: A Guide to SSH Keys for Servers and HPC Clusters</title>
+    <title>Alejandra López Espino | SSH Keys: A Guide to Remote Server Access</title>
 
 </head>
 <body class="container d-flex flex-column min-vh-100">
@@ -218,7 +218,7 @@ window.addEventListener('scroll', () => {
  
 
 <h3 style="font-size: 24px; font-weight:400">
-    <a class="title" href="/sshconfig/">Secure Remote Access: A Guide to SSH Keys for Servers and HPC Clusters</a>
+    <a class="title" href="/sshconfig/">SSH Keys: A Guide to Remote Server Access</a>
 </h3>
 
 <div class="reading_time secondary_font text-muted ">
@@ -255,11 +255,52 @@ window.addEventListener('scroll', () => {
       </div>
       <h1 id="what-are-ssh-keys">What are SSH keys</h1>
 <p>SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.</p>
-<h2 id="benefits">Benefits</h2>
-<p>Leveraging SSH authentication can significantly enhance your research workflow with High Performance Computing (HPC) resources. It allows for seamless file exchanges between your local computer and the server directly from the terminal, eliminating the need to repeatedly input your account password. Moreover, SSH authentication enables you to work on your code locally while executing it remotely using, for instance, VS Code. I explain how to configure VS Code for this purpose in another post. However, please be aware that for servers employing two-factor authentication, this secondary verification step will remain necessary. Specifically, for the Roar Collab server, this step is required just once every 24 hours.</p>
-<h2 id="external-validity">External validity</h2>
-<p>These instructions are specifically designed for <a href="https://www.icds.psu.edu/roar-collab/">Roar Collab</a>, Penn States&rsquo;s High Performance Computing (HPC) Cluster, but they are universally applicable to any server equipped with SSH and SCP capabilities. Whether you&rsquo;re working with a different HPC cluster or a standard Linux server, the steps outlined here will guide you in securely configuring access with an SSH key. Throughout these instructions, you&rsquo;ll see placeholders like <code><mark>&lt;psu-id&gt;</mark></code> and <code class="language-bash">submit.hpc.psu.edu</code>. Simply replace <code><mark>&lt;psu-id&gt;</mark></code>  with your unique user ID or username, and submit.hpc.psu.edu with the address of your specific server or HPC cluster.</p>
-<p>For more detailed information, you can refer to these useful resources:</p>
+<h2 id="amplifying-workflow-with-ssh-authentication">Amplifying Workflow with SSH Authentication</h2>
+<p>SSH authentication serves as a significant enhancer of your research workflow when working with High Performance Computing (HPC) resources. It paves the way for smooth file transfers between your local computer and the server straight from terminal, eradicating the need for repeated password input.</p>
+<p>Besides, SSH authentication aid in working on your code locally while executing it remotely, making use of applications like VS Code. A detailed guide to configure VS Code for this purpose can be find in another of my posts.</p>
+<p>Do note, for the systems utilizing two-factor authentication, this secondary verification remains mandatory. For instance, Roar Collab server requires full password + second factor authentication once every 24 hours.</p>
+<h2 id="widespread-applicability">Widespread Applicability</h2>
+<p>While these instructions are primarily tailored for <a href="https://www.icds.psu.edu/roar-collab/">Roar Collab</a>, Penn State&rsquo;s High Performance Computing (HPC) Cluster, they hold widespread relevance to any server equipped with SSH and SCP capabilities.</p>
+<p>Whether you&rsquo;re working with a different HPC cluster or a standard Linux server, these guidelines can perfectly fit in securing access configuration with an SSH key. Throughout the guide, you&rsquo;ll encounter placeholders like <code>&lt;psu-id&gt;</code> and <code>submit.hpc.psu.edu</code>. Simply replace <code>&lt;psu-id&gt;</code> with your unique user ID or username, and <code>submit.hpc.psu.edu</code> with your specific server or HPC cluster&rsquo;s address.</p>
+<h2 id="step-wise-guide-to-use-ssh-key">Step-wise Guide to Use SSH Key</h2>
+<h3 id="step-1-generate-ssh-key">Step 1: Generate SSH Key</h3>
+<ul>
+<li>Launch the SSH Agent:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ alias startssh<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eval `ssh-agent -s`&#34;</span>
+</span></span></code></pre></div><ul>
+<li>Create your SSH key using command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/.ssh
+</span></span><span style="display:flex;"><span>ssh-keygen
+</span></span></code></pre></div><p>During the exercise, choose a name for your SSH key. Here, I use <code>&lt;SSHkey_name&gt;</code> as a placeholder.</p>
+<p>Provide an empty passphrase by simply pressing <code>Enter</code>, and repeat when prompted.</p>
+<p>You can verify that this process created two files <code>&lt;SSHkey_name&gt;</code> and <code>&lt;SSHkey_name&gt;.pub</code> by running</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l
+</span></span></code></pre></div><h3 id="step-2-transfer-key-to-server">Step 2: Transfer Key to Server</h3>
+<p>Use this command to copy your SSH key to server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/&lt;SSHkey_name&gt; &lt;psu-id&gt;@submit.hpc.psu.edu
+</span></span></code></pre></div><h3 id="step-3-configure-connection">Step 3: Configure Connection</h3>
+<p>Add these lines to your <code>~/.ssh/config</code> file to configure connection:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host rcollab submit.hpc.psu.edu
+</span></span><span style="display:flex;"><span>  HostName submit.hpc.psu.edu
+</span></span><span style="display:flex;"><span>  IdentityFile /storage/home/&lt;psu-id&gt;/.ssh/&lt;SSHkey_name&gt;
+</span></span><span style="display:flex;"><span>  User &lt;psu-id&gt;
+</span></span><span style="display:flex;"><span>  ForwardX11 yes
+</span></span><span style="display:flex;"><span>  ForwardX11Trusted yes
+</span></span></code></pre></div><p><em>Note: You&rsquo;ll need to create the file, if it doesn&rsquo;t exist.</em></p>
+<p>This snippet serves two purposes. first, it tells the system where to find your SSH key. Second, using</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh &lt;psuid&gt;@submit.hpc.psu.edu
+</span></span></code></pre></div><p>to connect to Roar Collab via the terminal, now you can simply do</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh rcollab
+</span></span></code></pre></div><p>Use this new method to verify that you have set up the SSH key correctly.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If the connection fails, start the SSH agent on server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>startssh
+</span></span></code></pre></div><p>Next, add the key:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-add &lt;SSHkey_name&gt;
+</span></span></code></pre></div><p>And that&rsquo;s about it. Some of your Roar Collab actions can now be automated. Do remember, the password input and two-factor authentication completion is still needed once every 24 hours.</p>
+<p>For more detailed insights, these resources can be of help:</p>
 <ul>
 <li>
 <p><a href="https://www.ssh.com/academy/ssh/keygen"><strong>Generating an SSH Key</strong></a></p>
@@ -274,66 +315,6 @@ window.addEventListener('scroll', () => {
 <p><a href="https://stackoverflow.com/questions/25464930/how-can-i-remove-an-ssh-key"><strong>Removing an SSH Key</strong></a></p>
 </li>
 </ul>
-<h2 id="step-1-setting-up-terminal-shortcuts">Step 1: Setting Up Terminal Shortcuts</h2>
-<p>I&rsquo;ve created aliases and functions for convenience. Add these to your .bashrc file:</p>
-<ul>
-<li>Starting the SSH Agent</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ alias startssh<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eval `ssh-agent -s`&#34;</span>
-</span></span></code></pre></div><ul>
-<li>
-<p>Transferring Files from the Terminal</p>
-<ul>
-<li>From Local to Rcollab:</li>
-</ul>
-</li>
-</ul>
-<pre><code class= language-bash>
-function take() {
-        scp -r $1 <<mark>psuid</mark>>@submit.hpc.psu.edu:$2
-}
-</code></pre>
-<p>This function, take(), is designed to securely copy a directory specified by the first parameter to a remote server at submit.hpc.psu.edu. The path of the directory on the remote server is specified by the second parameter.</p>
-<ul>
-<li>From Rcollab to Local:</li>
-</ul>
-<pre><code class= language-bash>
-function bring() {
-   scp -r <<mark>psuid</mark>>@submit.hpc.psu.edu:$1 $2
-}
-</code></pre>
-<p>Similarly, the <code>bring()</code> function is designed to securely copy a directory specified by the first parameter from a remote server at <code>submit.hpc.psu.edu</code> to the local machine. The path of the directory on the remote server is specified by the first parameter, and the destination path on the local machine is specified by the second parameter.</p>
-<h2 id="step-2-generating-ssh-key">Step 2: Generating SSH Key</h2>
-<p>Generate your SSH key with the following command:</p>
-<pre><code class= language-bash>
-ssh-keygen
-</code></pre>
-<p>When prompted, choose a name for your SSH key. For passphrase, simply press <code>Enter</code>. press <code>Enter</code> once again when asked for the passphrase the second time.</p>
-<h2 id="step-3-copying-key-to-server">Step 3: Copying Key to Server</h2>
-<p>Use the take function to copy your SSH key to the server:</p>
-<pre><code class= language-bash>
-take ~/.ssh/r2rc /storage/home/<psu-id>/.ssh/
-ssh-copy-id -i ~/.ssh/r2rc <psu-id>@submit.hpc.psu.edu
-</code></pre>
-<h2 id="step-4-configuring-the-connection">Step 4: Configuring the Connection</h2>
-<p>Add the following lines to your <code>~/.ssh/config</code> file to configure the connection:</p>
-<pre><code class= language-bash>
-Host rcollab submit.hpc.psu.edu
-  HostName submit.hpc.psu.edu
-  IdentityFile /storage/home/<psu-id>/.ssh/r2rc
-  User <psu-id>
-  ForwardX11 yes
-  ForwardX11Trusted yes
-</code></pre>
-<h1 id="troubleshooting">Troubleshooting</h1>
-<p>If the connection still doesn&rsquo;t work, start the SSH agent on the server:</p>
-<pre><code class= language-bash>
-startssh
-</code></pre>
-<p>Then, add the key:</p>
-<pre><code class= language-bash>
-ssh-add r2rc
-</code></pre>
 
     </div>
   </section>
