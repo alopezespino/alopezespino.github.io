@@ -1,19 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Sed on Alejandra López Espino</title>
-    <link>https://alopezespino.github.io/tags/sed/</link>
-    <description>Recent content in Sed on Alejandra López Espino</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2024 23:30:33 -0500</lastBuildDate>
-    <atom:link href="https://alopezespino.github.io/tags/sed/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Text Processing with RegEx</title>
-      <link>https://alopezespino.github.io/regex/</link>
-      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
-      <guid>https://alopezespino.github.io/regex/</guid>
-      <description>Regular expressions (regex) are powerful string matching tools that use pattern-matching techniques for complex searching and manipulating. They occur across many programming languages, but also dominate command-line text-processing tools such as sed and awk in Unix-like systems.&#xA;What are Regular Expressions? Regular expressions are a sequence of characters representing a search pattern. This pattern can be used within string searching algorithms to &amp;ldquo;find&amp;rdquo; or &amp;ldquo;find and replace&amp;rdquo; textual data.&#xA;Common Regular Expressions The table below is based on RegExr&amp;rsquo;s cheatsheet.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sed on Alejandra López Espino</title><link>https://alopezespino.github.io/tags/sed/</link><description>Recent content in Sed on Alejandra López Espino</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 09 Mar 2024 23:30:33 -0500</lastBuildDate><atom:link href="https://alopezespino.github.io/tags/sed/index.xml" rel="self" type="application/rss+xml"/><item><title>Text Processing with RegEx</title><link>https://alopezespino.github.io/regex/</link><pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate><guid>https://alopezespino.github.io/regex/</guid><description>&lt;p&gt;Regular expressions (regex) are powerful string matching tools that use pattern-matching techniques for complex searching and manipulating. They occur across many programming languages, but also dominate command-line text-processing tools such as &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;awk&lt;/code&gt; in Unix-like systems.&lt;/p&gt;
+&lt;h2 id="what-are-regular-expressions"&gt;What are Regular Expressions?&lt;/h2&gt;
+&lt;p&gt;Regular expressions are a sequence of characters representing a search pattern. This pattern can be used within string searching algorithms to &amp;ldquo;find&amp;rdquo; or &amp;ldquo;find and replace&amp;rdquo; textual data.&lt;/p&gt;
+&lt;h3 id="common-regular-expressions"&gt;Common Regular Expressions&lt;/h3&gt;
+&lt;p&gt;The table below is based on &lt;a href="http://regexr.com"&gt;RegExr&amp;rsquo;s cheatsheet&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

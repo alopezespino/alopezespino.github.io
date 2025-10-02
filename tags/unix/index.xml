@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Unix on Alejandra López Espino</title>
-    <link>https://alopezespino.github.io/tags/unix/</link>
-    <description>Recent content in Unix on Alejandra López Espino</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 08 Mar 2024 16:10:30 -0500</lastBuildDate>
-    <atom:link href="https://alopezespino.github.io/tags/unix/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Command Line Basics</title>
-      <link>https://alopezespino.github.io/bash/</link>
-      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
-      <guid>https://alopezespino.github.io/bash/</guid>
-      <description>What is the Command Line? The command line, also known as a terminal or a shell, is a text-based interface that allows you to interact directly with your computer&amp;rsquo;s operating system. It enables you to instruct your computer explicitly what tasks to perform.&#xA;High Performance Computing (HPC) This direct contact becomes essential when working with high-performance computing (HPC) clusters, such as Roar Collab. Although Roar Collab operates on Red Hat Enterprise Linux 8 and may sometimes allow graphical interface (think dragging and clicking), extracting the full computational capabilities of these powerhouses often requires fluent command-line interaction.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Unix on Alejandra López Espino</title><link>https://alopezespino.github.io/tags/unix/</link><description>Recent content in Unix on Alejandra López Espino</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 08 Mar 2024 16:10:30 -0500</lastBuildDate><atom:link href="https://alopezespino.github.io/tags/unix/index.xml" rel="self" type="application/rss+xml"/><item><title>Command Line Basics</title><link>https://alopezespino.github.io/bash/</link><pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate><guid>https://alopezespino.github.io/bash/</guid><description>&lt;h3 id="what-is-the-command-line"&gt;What is the Command Line?&lt;/h3&gt;
+&lt;p&gt;The command line, also known as a terminal or a shell, is a text-based interface that allows you to interact directly with your computer&amp;rsquo;s operating system. It enables you to instruct your computer explicitly what tasks to perform.&lt;/p&gt;
+&lt;h3 id="high-performance-computing-hpc"&gt;High Performance Computing (HPC)&lt;/h3&gt;
+&lt;p&gt;This direct contact becomes essential when working with high-performance computing (HPC) clusters, such as Roar Collab. Although Roar Collab operates on Red Hat Enterprise Linux 8 and may sometimes allow graphical interface (think dragging and clicking), extracting the full computational capabilities of these powerhouses often requires fluent command-line interaction. It&amp;rsquo;s the difference between navigating the surface and taking a deep dive into your computer&amp;rsquo;s functions - the command line gives you much more precision and options. This control is why understanding command line interaction is crucial for HPC environments.&lt;/p&gt;</description></item></channel></rss>

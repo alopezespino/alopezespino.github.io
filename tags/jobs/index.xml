@@ -1,19 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Jobs on Alejandra López Espino</title>
-    <link>https://alopezespino.github.io/tags/jobs/</link>
-    <description>Recent content in Jobs on Alejandra López Espino</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2024 16:19:13 -0500</lastBuildDate>
-    <atom:link href="https://alopezespino.github.io/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Submitting your First Job to Roar Collab</title>
-      <link>https://alopezespino.github.io/jobs/</link>
-      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
-      <guid>https://alopezespino.github.io/jobs/</guid>
-      <description>You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.&#xA;Step 1: Create a job submit script. Below is an example of such file, called job_submit.sh.&#xA;#!/bin/bash #SBATCH --nodes=1 #SBATCH --cpus-per-task=4 #SBATCH --time=1:00:00 #SBATCH --mem=1GB #SBATCH --job-name=job_test #SBATCH --output=output_%j.log #SBATCH --mail-user=&amp;lt;psu-id&amp;gt;@psu.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jobs on Alejandra López Espino</title><link>https://alopezespino.github.io/tags/jobs/</link><description>Recent content in Jobs on Alejandra López Espino</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 09 Mar 2024 16:19:13 -0500</lastBuildDate><atom:link href="https://alopezespino.github.io/tags/jobs/index.xml" rel="self" type="application/rss+xml"/><item><title>Submitting your First Job to Roar Collab</title><link>https://alopezespino.github.io/jobs/</link><pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate><guid>https://alopezespino.github.io/jobs/</guid><description>&lt;p&gt;You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.&lt;/p&gt;
+&lt;h2 id="step-1-create-a-job-submit-script"&gt;Step 1: Create a job submit script.&lt;/h2&gt;
+&lt;p&gt;Below is an example of such file, called &lt;code&gt;job_submit.sh&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --nodes=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --cpus-per-task=4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --time=1:00:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --mem=1GB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --job-name=job_test&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --output=output_%j.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --mail-user=&amp;lt;psu-id&amp;gt;@psu.edu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --mail-type=BEGIN,END,FAIL&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# User specific aliases and functions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;## modules&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;module load r/4.3.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# by default, the job starts in your home directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# change it to where you put your .sh file, usually&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# next to code to use&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd $HOME/work/code/job_example/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Body of code (include here scripts to run)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;R --file&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;./script.R&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Finish up&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34; &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;Job Ended at `date`&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34; &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="configuration-parameters"&gt;Configuration Parameters&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;#SBATCH --nodes=1&lt;/code&gt;: Specifies the number of compute nodes required for the job. In this case, it is set to 1.&lt;/p&gt;</description></item></channel></rss>

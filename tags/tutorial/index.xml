@@ -1,54 +1,56 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tutorial on Alejandra López Espino</title>
-    <link>https://alopezespino.github.io/tags/tutorial/</link>
-    <description>Recent content in Tutorial on Alejandra López Espino</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2024 23:30:33 -0500</lastBuildDate>
-    <atom:link href="https://alopezespino.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Text Processing with RegEx</title>
-      <link>https://alopezespino.github.io/regex/</link>
-      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
-      <guid>https://alopezespino.github.io/regex/</guid>
-      <description>Regular expressions (regex) are powerful string matching tools that use pattern-matching techniques for complex searching and manipulating. They occur across many programming languages, but also dominate command-line text-processing tools such as sed and awk in Unix-like systems.&#xA;What are Regular Expressions? Regular expressions are a sequence of characters representing a search pattern. This pattern can be used within string searching algorithms to &amp;ldquo;find&amp;rdquo; or &amp;ldquo;find and replace&amp;rdquo; textual data.&#xA;Common Regular Expressions The table below is based on RegExr&amp;rsquo;s cheatsheet.</description>
-    </item>
-    <item>
-      <title>Vim</title>
-      <link>https://alopezespino.github.io/vim/</link>
-      <pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate>
-      <guid>https://alopezespino.github.io/vim/</guid>
-      <description>Overwiew Vim is a highly configurable text editor renowned for its efficiency and power. It&amp;rsquo;s built to enable efficient text editing, making it a popular choice for developers and system administrators.&#xA;In this post, I put the commands that I use the most, but I also recommend this interactive Vim tutorial&#xA;Open Vim To open vim, simply type the following in the command-line&#xA;vim &amp;lt;path/to/file&amp;gt; where &amp;lt;path/to/file&amp;gt; can be the path of any text-based file.</description>
-    </item>
-    <item>
-      <title>Submitting your First Job to Roar Collab</title>
-      <link>https://alopezespino.github.io/jobs/</link>
-      <pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate>
-      <guid>https://alopezespino.github.io/jobs/</guid>
-      <description>You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.&#xA;Step 1: Create a job submit script. Below is an example of such file, called job_submit.sh.&#xA;#!/bin/bash #SBATCH --nodes=1 #SBATCH --cpus-per-task=4 #SBATCH --time=1:00:00 #SBATCH --mem=1GB #SBATCH --job-name=job_test #SBATCH --output=output_%j.log #SBATCH --mail-user=&amp;lt;psu-id&amp;gt;@psu.</description>
-    </item>
-    <item>
-      <title>Command Line Basics</title>
-      <link>https://alopezespino.github.io/bash/</link>
-      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
-      <guid>https://alopezespino.github.io/bash/</guid>
-      <description>What is the Command Line? The command line, also known as a terminal or a shell, is a text-based interface that allows you to interact directly with your computer&amp;rsquo;s operating system. It enables you to instruct your computer explicitly what tasks to perform.&#xA;High Performance Computing (HPC) This direct contact becomes essential when working with high-performance computing (HPC) clusters, such as Roar Collab. Although Roar Collab operates on Red Hat Enterprise Linux 8 and may sometimes allow graphical interface (think dragging and clicking), extracting the full computational capabilities of these powerhouses often requires fluent command-line interaction.</description>
-    </item>
-    <item>
-      <title>SSH Keys: A Guide to Remote Server Access</title>
-      <link>https://alopezespino.github.io/sshconfig/</link>
-      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
-      <guid>https://alopezespino.github.io/sshconfig/</guid>
-      <description>What are SSH keys SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&#xA;Amplifying Workflow with SSH Authentication SSH authentication serves as a significant enhancer of your research workflow when working with High Performance Computing (HPC) resources. It paves the way for smooth file transfers between your local computer and the server straight from terminal, eradicating the need for repeated password input.</description>
-    </item>
-    <item>
-      <title>Roar Collab Quickstart</title>
-      <link>https://alopezespino.github.io/rcollab/</link>
-      <pubDate>Tue, 05 Mar 2024 12:31:06 -0500</pubDate>
-      <guid>https://alopezespino.github.io/rcollab/</guid>
-      <description>Overview Roar Collab is Penn State&amp;rsquo;s High-Performance Computing (HPC) Cluster. In this post, I will lay out the basic tools needed to use it.&#xA;Here, I assume:&#xA;You have already created an account and have access. Otherwise, follow the official documentation for instructions. Basic knowledge on Linux and using the comand line/bash shell. If not, check &amp;ldquo;Command Line Basics&amp;rdquo;. For the remainder of this tutorial, I will refer to Roar Collab as Rcollab.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorial on Alejandra López Espino</title><link>https://alopezespino.github.io/tags/tutorial/</link><description>Recent content in Tutorial on Alejandra López Espino</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 09 Mar 2024 23:30:33 -0500</lastBuildDate><atom:link href="https://alopezespino.github.io/tags/tutorial/index.xml" rel="self" type="application/rss+xml"/><item><title>Text Processing with RegEx</title><link>https://alopezespino.github.io/regex/</link><pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate><guid>https://alopezespino.github.io/regex/</guid><description>&lt;p&gt;Regular expressions (regex) are powerful string matching tools that use pattern-matching techniques for complex searching and manipulating. They occur across many programming languages, but also dominate command-line text-processing tools such as &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;awk&lt;/code&gt; in Unix-like systems.&lt;/p&gt;
+&lt;h2 id="what-are-regular-expressions"&gt;What are Regular Expressions?&lt;/h2&gt;
+&lt;p&gt;Regular expressions are a sequence of characters representing a search pattern. This pattern can be used within string searching algorithms to &amp;ldquo;find&amp;rdquo; or &amp;ldquo;find and replace&amp;rdquo; textual data.&lt;/p&gt;
+&lt;h3 id="common-regular-expressions"&gt;Common Regular Expressions&lt;/h3&gt;
+&lt;p&gt;The table below is based on &lt;a href="http://regexr.com"&gt;RegExr&amp;rsquo;s cheatsheet&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Vim</title><link>https://alopezespino.github.io/vim/</link><pubDate>Sat, 09 Mar 2024 23:30:33 -0500</pubDate><guid>https://alopezespino.github.io/vim/</guid><description>&lt;h1 id="overwiew"&gt;Overwiew&lt;/h1&gt;
+&lt;p&gt;Vim is a highly configurable text editor renowned for its efficiency and power. It&amp;rsquo;s built to enable efficient text editing, making it a popular choice for developers and system administrators.&lt;/p&gt;
+&lt;p&gt;In this post, I put the commands that I use the most, but I also recommend &lt;a href="https://www.openvim.com"&gt;this &lt;strong&gt;interactive Vim tutorial&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="open-vim"&gt;Open Vim&lt;/h2&gt;
+&lt;p&gt;To open vim, simply type the following in the command-line&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;vim &amp;lt;path/to/file&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where &lt;code&gt;&amp;lt;path/to/file&amp;gt;&lt;/code&gt; can be the path of any text-based file. If &lt;code&gt;file&lt;/code&gt; doesn&amp;rsquo;t exist, then it will be created.&lt;/p&gt;</description></item><item><title>Submitting your First Job to Roar Collab</title><link>https://alopezespino.github.io/jobs/</link><pubDate>Sat, 09 Mar 2024 16:19:13 -0500</pubDate><guid>https://alopezespino.github.io/jobs/</guid><description>&lt;p&gt;You can submit scripts to run in Roar collab. Each script is called a job and you submit a job by providing a batch script to the SLURM scheduler. This script contains the resource specifications that your program needs to run.&lt;/p&gt;
+&lt;h2 id="step-1-create-a-job-submit-script"&gt;Step 1: Create a job submit script.&lt;/h2&gt;
+&lt;p&gt;Below is an example of such file, called &lt;code&gt;job_submit.sh&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --nodes=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --cpus-per-task=4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --time=1:00:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --mem=1GB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --job-name=job_test&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --output=output_%j.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --mail-user=&amp;lt;psu-id&amp;gt;@psu.edu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#SBATCH --mail-type=BEGIN,END,FAIL&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# User specific aliases and functions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;## modules&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;module load r/4.3.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# by default, the job starts in your home directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# change it to where you put your .sh file, usually&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# next to code to use&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd $HOME/work/code/job_example/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Body of code (include here scripts to run)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;R --file&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;./script.R&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# Finish up&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34; &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34;Job Ended at `date`&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;echo &lt;span style="color:#e6db74"&gt;&amp;#34; &amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="configuration-parameters"&gt;Configuration Parameters&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;#SBATCH --nodes=1&lt;/code&gt;: Specifies the number of compute nodes required for the job. In this case, it is set to 1.&lt;/p&gt;</description></item><item><title>Command Line Basics</title><link>https://alopezespino.github.io/bash/</link><pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate><guid>https://alopezespino.github.io/bash/</guid><description>&lt;h3 id="what-is-the-command-line"&gt;What is the Command Line?&lt;/h3&gt;
+&lt;p&gt;The command line, also known as a terminal or a shell, is a text-based interface that allows you to interact directly with your computer&amp;rsquo;s operating system. It enables you to instruct your computer explicitly what tasks to perform.&lt;/p&gt;
+&lt;h3 id="high-performance-computing-hpc"&gt;High Performance Computing (HPC)&lt;/h3&gt;
+&lt;p&gt;This direct contact becomes essential when working with high-performance computing (HPC) clusters, such as Roar Collab. Although Roar Collab operates on Red Hat Enterprise Linux 8 and may sometimes allow graphical interface (think dragging and clicking), extracting the full computational capabilities of these powerhouses often requires fluent command-line interaction. It&amp;rsquo;s the difference between navigating the surface and taking a deep dive into your computer&amp;rsquo;s functions - the command line gives you much more precision and options. This control is why understanding command line interaction is crucial for HPC environments.&lt;/p&gt;</description></item><item><title>SSH Keys: A Guide to Remote Server Access</title><link>https://alopezespino.github.io/sshconfig/</link><pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate><guid>https://alopezespino.github.io/sshconfig/</guid><description>&lt;h1 id="what-are-ssh-keys"&gt;What are SSH keys&lt;/h1&gt;
+&lt;p&gt;SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&lt;/p&gt;
+&lt;h2 id="amplifying-workflow-with-ssh-authentication"&gt;Amplifying Workflow with SSH Authentication&lt;/h2&gt;
+&lt;p&gt;SSH authentication serves as a significant enhancer of your research workflow when working with High Performance Computing (HPC) resources. It paves the way for smooth file transfers between your local computer and the server straight from terminal, eradicating the need for repeated password input.&lt;/p&gt;</description></item><item><title>Roar Collab Quickstart</title><link>https://alopezespino.github.io/rcollab/</link><pubDate>Tue, 05 Mar 2024 12:31:06 -0500</pubDate><guid>https://alopezespino.github.io/rcollab/</guid><description>&lt;h1 id="overview"&gt;Overview&lt;/h1&gt;
+&lt;p&gt;Roar Collab is Penn State&amp;rsquo;s High-Performance Computing (HPC) Cluster. In this post, I will lay out the basic tools needed to use it.&lt;/p&gt;
+&lt;p&gt;Here, I assume:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;You have already created an account and have access. Otherwise, follow the &lt;a href="https://www.icds.psu.edu/roar-collab-user-guide/"&gt;official documentation&lt;/a&gt; for instructions.&lt;/li&gt;
+&lt;li&gt;Basic knowledge on Linux and using the comand line/bash shell. If not, check &lt;a href="https://alopezespino.github.io/bash/"&gt;&lt;em&gt;&lt;strong&gt;&amp;ldquo;Command Line Basics&amp;rdquo;&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For the remainder of this tutorial, I will refer to Roar Collab as Rcollab.&lt;/p&gt;</description></item></channel></rss>

@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Server on Alejandra López Espino</title>
-    <link>https://alopezespino.github.io/tags/server/</link>
-    <description>Recent content in Server on Alejandra López Espino</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 08 Mar 2024 16:10:30 -0500</lastBuildDate>
-    <atom:link href="https://alopezespino.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>SSH Keys: A Guide to Remote Server Access</title>
-      <link>https://alopezespino.github.io/sshconfig/</link>
-      <pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate>
-      <guid>https://alopezespino.github.io/sshconfig/</guid>
-      <description>What are SSH keys SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&#xA;Amplifying Workflow with SSH Authentication SSH authentication serves as a significant enhancer of your research workflow when working with High Performance Computing (HPC) resources. It paves the way for smooth file transfers between your local computer and the server straight from terminal, eradicating the need for repeated password input.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server on Alejandra López Espino</title><link>https://alopezespino.github.io/tags/server/</link><description>Recent content in Server on Alejandra López Espino</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 08 Mar 2024 16:10:30 -0500</lastBuildDate><atom:link href="https://alopezespino.github.io/tags/server/index.xml" rel="self" type="application/rss+xml"/><item><title>SSH Keys: A Guide to Remote Server Access</title><link>https://alopezespino.github.io/sshconfig/</link><pubDate>Fri, 08 Mar 2024 16:10:30 -0500</pubDate><guid>https://alopezespino.github.io/sshconfig/</guid><description>&lt;h1 id="what-are-ssh-keys"&gt;What are SSH keys&lt;/h1&gt;
+&lt;p&gt;SSH keys are a pair of cryptographic keys that enable secure, password-less remote access to servers and other systems.&lt;/p&gt;
+&lt;h2 id="amplifying-workflow-with-ssh-authentication"&gt;Amplifying Workflow with SSH Authentication&lt;/h2&gt;
+&lt;p&gt;SSH authentication serves as a significant enhancer of your research workflow when working with High Performance Computing (HPC) resources. It paves the way for smooth file transfers between your local computer and the server straight from terminal, eradicating the need for repeated password input.&lt;/p&gt;</description></item></channel></rss>
