@@ -32,3 +32,10 @@ code mark {
     white-space: normal;
     line-height: 1.5;
 }
+
+/* Blog link on the home page: use the page font instead of the icon font fallback */
+.about #blog_logo i {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: bold;
+}
